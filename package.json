@@ -4,8 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "sass --style=expanded --no-source-map scss/main.scss css/main.css",
-    "watch": "sass --watch scss/main.scss css/main.css",
+    "build": "node node_modules/sass/sass.js --style=expanded --no-source-map scss/style.scss css/style.css",
+    "watch": "node node_modules/sass/sass.js --watch scss/style.scss css/style.css",
     "lint": "eslint js",
     "check": "npm run build && npm run lint"
   },

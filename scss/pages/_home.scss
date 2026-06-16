@@ -1,0 +1,17 @@
+/* Le header reste en haut */
+#header {
+  position: relative;
+  z-index: 1000;
+}
+
+/* Le contenu commence après le header */
+.hero {
+  min-height: calc(100vh - 100px);
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+/* On enlève la marge Bootstrap */
+.hero-content {
+  margin-top: 0 !important;
+}
