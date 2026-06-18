@@ -2,41 +2,44 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 1000;
 
   width: 100%;
-  min-height: $header-height-desktop;
+  min-height: 86px;
 
   background: linear-gradient(
     180deg,
-    rgba(42, 45, 52, 0.76) 0%,
-    rgba(42, 45, 52, 0.5) 56%,
-    rgba(42, 45, 52, 0) 100%
+    rgba(42, 45, 52, 0.88) 0%,
+    rgba(42, 45, 52, 0.52) 58%,
+    rgba(42, 45, 52, 0.12) 100%
   );
 
   .navbar {
-    min-height: $header-height-desktop;
+    min-height: 86px;
     padding: 0;
   }
 
   .container {
-    min-height: $header-height-desktop;
+    min-height: 86px;
+
     display: flex;
     align-items: center;
-    padding-inline: $desktop-padding;
+
+    max-width: 1220px;
+    padding-inline: 46px;
   }
 }
 
 .site-logo {
   display: inline-flex;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
   flex-shrink: 0;
-  margin-right: 54px;
+  margin-right: 44px;
   text-decoration: none;
 
   img {
-    width: 94px;
+    width: 82px;
     height: auto;
   }
 }
@@ -46,16 +49,18 @@
   gap: 2px;
   color: $color-cream;
   font-family: $font-display;
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: 400;
   line-height: 1;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
-  letter-spacing: 0;
 
   small {
     color: $color-gold;
     font-family: $font-body;
-    font-size: 9px;
-    font-weight: 500;
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
   }
 }
@@ -65,59 +70,78 @@
 }
 
 .navbar-nav {
-  align-items: stretch;
-  gap: 56px;
+  align-items: center;
+  gap: 48px;
 }
 
 .nav-link {
   position: relative;
-  height: $header-height-desktop;
+
+  min-height: 57px;
   display: inline-flex;
   align-items: center;
   padding: 0 4px !important;
+
   font-family: $font-body;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 700;
+
   color: $color-cream;
+
   text-transform: uppercase;
   text-decoration: none;
+
   transition: color $transition-default;
 
   &:hover,
-  &:focus-visible,
-  &.active {
+  &:focus-visible {
     color: $color-gold;
   }
 
-  &.active::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 38px;
-    width: 96px;
-    height: 1px;
-    background-color: $color-gold;
-    transform: translateX(-50%);
+  &.active {
+    color: $color-gold;
+
+    &::after {
+      content: "";
+
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+
+      width: 72px;
+      height: 1px;
+
+      background-color: $color-gold;
+
+      transform: translateX(-50%);
+    }
   }
 }
 
 .btn-reservation {
   min-width: 246px;
-  min-height: 58px;
+  min-height: 57px;
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0 26px;
-  margin-left: 54px;
+
+  padding: 0 20px;
+  margin-left: 34px;
+
   background-color: $color-gold;
   color: $color-anthracite;
+
   border: 2px solid $color-gold;
   border-radius: $radius-small;
+
   font-family: $font-body;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 800;
+
   text-transform: uppercase;
   text-decoration: none;
+
   transition:
     background-color $transition-default,
     color $transition-default,
@@ -127,6 +151,7 @@
   &:focus-visible {
     background-color: transparent;
     color: $color-gold;
+    border-color: $color-gold;
   }
 }
 
@@ -134,7 +159,8 @@
   width: 48px;
   height: 48px;
   margin-left: auto;
-  border: 1px solid rgba(245, 240, 232, 0.45);
+
+  border: 1px solid rgba(245, 240, 232, 0.4);
   border-radius: 0;
 
   &:focus {
@@ -146,25 +172,7 @@
   filter: brightness(0) invert(1);
 }
 
-@media (max-width: 1199.98px) {
-  .site-header .container {
-    padding-inline: 40px;
-  }
-
-  .site-logo {
-    margin-right: 28px;
-  }
-
-  .navbar-nav {
-    gap: 30px;
-  }
-
-  .btn-reservation {
-    min-width: 210px;
-    margin-left: 28px;
-  }
-}
-
+/* Tablette et mobile */
 @media (max-width: $breakpoint-tablet) {
   .site-header {
     min-height: $header-height-mobile;
@@ -180,19 +188,19 @@
   }
 
   .site-logo {
-    gap: 12px;
+    gap: 8px;
     margin-right: 0;
 
     img {
-      width: 58px;
+      width: 54px;
     }
   }
 
   .site-logo-text {
-    font-size: 15px;
+    font-size: 13px;
 
     small {
-      font-size: 7px;
+      font-size: 6px;
     }
   }
 
@@ -200,26 +208,31 @@
     position: absolute;
     top: $header-height-mobile;
     left: 0;
+
     width: 100%;
-    padding: 18px $mobile-padding 24px;
-    background-color: rgba(42, 45, 52, 0.96);
-    box-shadow: 0 12px 24px rgba(42, 45, 52, 0.3);
+    padding: 24px;
+
+    background-color: $color-anthracite;
+
+    box-shadow: 0 12px 24px rgba(42, 45, 52, 0.25);
   }
 
   .navbar-nav {
     align-items: flex-start;
-    gap: 0;
+    gap: 4px;
   }
 
   .nav-link {
     width: 100%;
-    height: auto;
+    min-height: auto;
     padding: 14px 0 !important;
 
     &.active::after {
       left: 0;
-      bottom: 8px;
+      bottom: 4px;
+
       width: 42px;
+
       transform: none;
     }
   }
@@ -227,6 +240,8 @@
   .btn-reservation {
     width: 100%;
     min-width: 0;
-    margin: 18px 0 0;
+    min-height: 52px;
+    margin-top: 20px;
+    margin-left: 0;
   }
 }

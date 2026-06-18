@@ -1,8 +1,16 @@
 .shows-grid {
   display: grid;
-  grid-template-columns: repeat(3, 196.27px);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 48px;
   align-items: start;
+}
+
+.shows-carousel {
+  position: relative;
+}
+
+.shows-nav {
+  display: none;
 }
 
 .show-card {
@@ -124,11 +132,139 @@
     line-height: 1;
   }
 }
+@media (max-width: $breakpoint-cards-mobile) {
+  .shows-carousel {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    position: relative;
+  }
 
-@media (max-width: $breakpoint-tablet) {
   .shows-grid {
-    grid-template-columns: repeat(auto-fit, minmax(196.27px, 196.27px));
-    gap: 28px;
-    justify-content: center;
+    display: block;
+    width: 260px;
+    margin: 0 auto;
+  }
+
+  .show-card {
+    display: none;
+    width: 260px;
+    height: auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow:
+      0 3px 7px rgba(42, 45, 52, 0.28),
+      0 10px 18px rgba(42, 45, 52, 0.2);
+
+    &:first-child {
+      display: block;
+    }
+  }
+
+  .show-card__media {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+
+  .show-card__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  .show-card__badge {
+    width: 42px;
+    height: 42px;
+
+    span {
+      font-size: 15px;
+      line-height: 15px;
+      letter-spacing: 0.14em;
+    }
+
+    small {
+      margin-top: 2px;
+      font-size: 8px;
+      line-height: 8px;
+      letter-spacing: 0.14em;
+    }
+  }
+
+  .show-card .card-body {
+    height: auto;
+    min-height: 130px;
+    padding: 12px 10px 14px;
+  }
+
+  .show-card__title {
+    width: 100%;
+    min-height: auto;
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.14em;
+  }
+
+  .show-card__category {
+    font-size: 10px;
+    line-height: 16px;
+  }
+
+  .show-card__schedule {
+    gap: 8px;
+    font-size: 9px;
+    line-height: 14px;
+    letter-spacing: 0;
+  }
+
+  .show-card__schedule .bi {
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+  }
+
+  .shows-nav {
+    position: absolute;
+    top: 98px;
+    z-index: 2;
+    width: 20px;
+    height: 24px;
+    display: block;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      content: "";
+      transform: translateY(-50%);
+    }
+
+    &--prev {
+      left: 0;
+
+      &::before {
+        left: 0;
+        border-top: 7px solid transparent;
+        border-right: 12px solid $color-bordeaux;
+        border-bottom: 7px solid transparent;
+      }
+    }
+
+    &--next {
+      right: 0;
+
+      &::before {
+        right: 0;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid transparent;
+        border-left: 12px solid $color-bordeaux;
+      }
+    }
   }
 }
