@@ -1,17 +1,224 @@
-/* Le header reste en haut */
-#header {
-  position: relative;
-  z-index: 1000;
-}
-
-/* Le contenu commence après le header */
 .hero {
-  min-height: calc(100vh - 100px);
-  padding-top: 80px;
-  padding-bottom: 60px;
+  position: relative;
+  isolation: isolate;
+  min-height: 760px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(42, 45, 52, 0.7) 0%,
+      rgba(42, 45, 52, 0.38) 38%,
+      rgba(42, 45, 52, 0.18) 100%
+    ),
+    url("../assets/images/scene-principale.webp") center / cover no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: url("../assets/images/rideaux.webp") center top / cover
+      no-repeat;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      180deg,
+      rgba(42, 45, 52, 0.08) 0%,
+      rgba(42, 45, 52, 0.34) 100%
+    );
+    pointer-events: none;
+  }
 }
 
-/* On enlève la marge Bootstrap */
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding-top: 132px;
+  padding-inline: $desktop-padding;
+}
+
 .hero-content {
-  margin-top: 0 !important;
+  max-width: 610px;
+  margin-left: 170px;
+  color: $color-cream;
+}
+
+.hero-eyebrow,
+.hero-subtitle {
+  margin: 0;
+  color: $color-gold;
+  font-family: $font-body;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  margin: 42px 0 30px;
+  color: $color-cream;
+  font-family: $font-display;
+  font-size: clamp(54px, 5vw, 76px);
+  font-weight: 500;
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+
+.hero-description {
+  max-width: 465px;
+  margin: 28px 0 48px;
+  color: $color-cream;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.hero-button {
+  min-width: 342px;
+  min-height: 61px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 28px;
+  background-color: $color-gold;
+  color: $color-anthracite;
+  border: 2px solid $color-gold;
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition:
+    background-color $transition-default,
+    color $transition-default;
+
+  &:hover,
+  &:focus-visible {
+    background-color: transparent;
+    color: $color-gold;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .hero-content {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .hero {
+    min-height: 650px;
+    background-position: 58% center;
+  }
+
+  .hero-inner {
+    padding-top: 120px;
+    padding-inline: $mobile-padding;
+  }
+
+  .hero-content {
+    max-width: 520px;
+    margin-left: 0;
+  }
+
+  .hero-eyebrow,
+  .hero-subtitle {
+    font-size: 17px;
+  }
+
+  .hero-title {
+    margin: 28px 0 20px;
+    font-size: clamp(42px, 12vw, 58px);
+  }
+
+  .hero-description {
+    max-width: 360px;
+    margin: 20px 0 34px;
+    font-size: 14px;
+  }
+
+  .hero-button {
+    min-width: min(100%, 300px);
+    min-height: 58px;
+    font-size: 12px;
+  }
+}
+
+.featured-shows {
+  padding: 60px 0;
+  background-color: $color-cream;
+
+  &__container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &__heading {
+    margin-bottom: 60px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0 0 20px;
+    color: $color-gold;
+    font-family: $font-body;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    span {
+      width: 55px;
+      height: 1px;
+      background-color: $color-gold;
+    }
+  }
+
+  h2 {
+    margin: 0;
+    color: $color-bordeaux;
+    font-family: $font-display;
+    font-size: 46px;
+    font-weight: 400;
+    letter-spacing: 9px;
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .hero {
+    min-height: 560px;
+    background-position: 62% center;
+  }
+
+  .hero::before {
+    background-position: center top;
+    opacity: 0.72;
+  }
+
+  .featured-shows {
+    padding: 44px 0;
+
+    &__container {
+      width: calc(100% - 40px);
+    }
+
+    &__heading {
+      margin-bottom: 36px;
+    }
+
+    h2 {
+      font-size: 32px;
+      letter-spacing: 5px;
+    }
+  }
 }

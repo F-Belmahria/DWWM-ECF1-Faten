@@ -1,0 +1,319 @@
+// Couleurs de la charte graphique
+$burgundy: #6b1d3a;
+$gold: #d4a843;
+$anthracite: #2a2d34;
+$cream: #f5f0e8;
+
+// Typographies
+$heading-font: "Playfair Display", Georgia, serif;
+$body-font: "Inter", Arial, sans-serif;
+
+.footer {
+  position: relative;
+  overflow: hidden;
+  color: $cream;
+  background-color: $anthracite;
+  font-family: $body-font;
+
+  // Petite ligne dorée présente sur la maquette
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background-color: $gold;
+    content: "";
+  }
+
+  &__container {
+    padding-top: 4rem;
+    padding-bottom: 3.5rem;
+  }
+
+  &__content {
+    align-items: flex-start;
+  }
+
+  &__brand {
+    max-width: 330px;
+  }
+
+  &__logo-link {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  &__logo {
+    width: 120px;
+    height: auto;
+    margin-bottom: 1.25rem;
+  }
+
+  &__description {
+    max-width: 295px;
+    margin: 0;
+    color: $cream;
+    font-size: 0.875rem;
+    line-height: 1.45;
+  }
+
+  &__title {
+    margin: 0 0 1.1rem;
+    color: $gold;
+    font-family: $body-font;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__list,
+  &__social-list,
+  &__legal-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  &__link {
+    display: inline-block;
+    color: $cream;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    text-decoration: none;
+    transition:
+      color 200ms ease,
+      transform 200ms ease;
+
+    &:hover {
+      color: $gold;
+      transform: translateX(3px);
+    }
+
+    &:focus-visible {
+      color: $gold;
+      outline: 2px solid $gold;
+      outline-offset: 4px;
+    }
+  }
+
+  &__social-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.75rem;
+  }
+
+  &__social-link {
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    align-items: center;
+    justify-content: center;
+    color: $anthracite;
+    background-color: $cream;
+    border: 1px solid $cream;
+    border-radius: 50%;
+    font-size: 1rem;
+    text-decoration: none;
+    transition:
+      color 200ms ease,
+      background-color 200ms ease,
+      border-color 200ms ease,
+      transform 200ms ease;
+
+    &:hover {
+      color: $anthracite;
+      background-color: $gold;
+      border-color: $gold;
+      transform: translateY(-3px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid $gold;
+      outline-offset: 4px;
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin: 0 0 1.25rem;
+    font-style: normal;
+  }
+
+  &__booking-button {
+    width: 160px;
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $anthracite;
+    background-color: $gold;
+    border: 2px solid $gold;
+    border-radius: 0;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition:
+      color 200ms ease,
+      background-color 200ms ease,
+      transform 200ms ease;
+
+    &:hover,
+    &:focus {
+      color: $gold;
+      background-color: transparent;
+      border-color: $gold;
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: 3px solid $cream;
+      outline-offset: 3px;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    padding: 1.8rem 0;
+    background-color: $anthracite;
+
+    &::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 1px;
+      background-color: $gold;
+      content: "";
+    }
+  }
+
+  &__copyright {
+    margin: 0;
+    color: $cream;
+    font-size: 0.68rem;
+  }
+
+  &__legal-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  &__legal-link {
+    color: $cream;
+    font-size: 0.68rem;
+    text-decoration: none;
+    transition: color 200ms ease;
+
+    &:hover {
+      color: $gold;
+    }
+
+    &:focus-visible {
+      color: $gold;
+      outline: 2px solid $gold;
+      outline-offset: 4px;
+    }
+  }
+}
+
+// Tablette
+@media (max-width: 991.98px) {
+  .footer {
+    &__container {
+      padding-top: 3.5rem;
+      padding-bottom: 3rem;
+    }
+
+    &__brand {
+      max-width: 100%;
+    }
+
+    &__legal-list {
+      justify-content: flex-start;
+      gap: 1.5rem 3rem;
+    }
+  }
+}
+
+// Mobile
+@media (max-width: 575.98px) {
+  .footer {
+    text-align: center;
+
+    &__container {
+      padding-top: 3rem;
+      padding-bottom: 2.5rem;
+    }
+
+    &__brand,
+    &__contact,
+    &__social-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__logo {
+      width: 150px;
+    }
+
+    &__description {
+      max-width: 290px;
+    }
+
+    &__title {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    &__list {
+      align-items: center;
+    }
+
+    &__link:hover {
+      transform: none;
+    }
+
+    &__social-list {
+      justify-content: center;
+      gap: 1.25rem;
+    }
+
+    &__booking-button {
+      width: 100%;
+      max-width: 280px;
+    }
+
+    &__bottom {
+      padding: 1.5rem 0;
+    }
+
+    &__copyright {
+      text-align: center;
+    }
+
+    &__legal-list {
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+}

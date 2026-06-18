@@ -2,15 +2,16 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 20;
 
   width: 100%;
   min-height: $header-height-desktop;
 
   background: linear-gradient(
     180deg,
-    rgba(42, 45, 52, 0.82) 0%,
-    rgba(42, 45, 52, 0.18) 100%
+    rgba(42, 45, 52, 0.76) 0%,
+    rgba(42, 45, 52, 0.5) 56%,
+    rgba(42, 45, 52, 0) 100%
   );
 
   .navbar {
@@ -20,10 +21,8 @@
 
   .container {
     min-height: $header-height-desktop;
-
     display: flex;
     align-items: center;
-
     padding-inline: $desktop-padding;
   }
 }
@@ -31,11 +30,33 @@
 .site-logo {
   display: inline-flex;
   align-items: center;
+  gap: 18px;
   flex-shrink: 0;
+  margin-right: 54px;
+  text-decoration: none;
 
   img {
-    width: 115px;
+    width: 94px;
     height: auto;
+  }
+}
+
+.site-logo-text {
+  display: grid;
+  gap: 2px;
+  color: $color-cream;
+  font-family: $font-display;
+  font-size: 22px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0;
+
+  small {
+    color: $color-gold;
+    font-family: $font-body;
+    font-size: 9px;
+    font-weight: 500;
+    text-transform: uppercase;
   }
 }
 
@@ -44,74 +65,59 @@
 }
 
 .navbar-nav {
-  align-items: center;
-  gap: 42px;
+  align-items: stretch;
+  gap: 56px;
 }
 
 .nav-link {
   position: relative;
-
-  padding: 47px 4px 22px !important;
-
+  height: $header-height-desktop;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 4px !important;
   font-family: $font-body;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
-
   color: $color-cream;
-
   text-transform: uppercase;
   text-decoration: none;
-
   transition: color $transition-default;
 
   &:hover,
-  &:focus-visible {
+  &:focus-visible,
+  &.active {
     color: $color-gold;
   }
 
-  &.active {
-    color: $color-gold;
-
-    &::after {
-      content: "";
-
-      position: absolute;
-      left: 50%;
-      bottom: 8px;
-
-      width: 72px;
-      height: 2px;
-
-      background-color: $color-gold;
-
-      transform: translateX(-50%);
-    }
+  &.active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 38px;
+    width: 96px;
+    height: 1px;
+    background-color: $color-gold;
+    transform: translateX(-50%);
   }
 }
 
 .btn-reservation {
   min-width: 246px;
-  min-height: 57px;
-
+  min-height: 58px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  padding: 46px 20px;
-
+  padding: 0 26px;
+  margin-left: 54px;
   background-color: $color-gold;
   color: $color-anthracite;
-
   border: 2px solid $color-gold;
   border-radius: $radius-small;
-
   font-family: $font-body;
-  font-size: 14px;
-  font-weight: 700;
-
+  font-size: 13px;
+  font-weight: 800;
   text-transform: uppercase;
   text-decoration: none;
-
   transition:
     background-color $transition-default,
     color $transition-default,
@@ -121,15 +127,15 @@
   &:focus-visible {
     background-color: transparent;
     color: $color-gold;
-    border-color: $color-gold;
   }
 }
 
 .navbar-toggler {
   width: 48px;
   height: 48px;
-
-  border: 1px solid rgba(245, 240, 232, 0.4);
+  margin-left: auto;
+  border: 1px solid rgba(245, 240, 232, 0.45);
+  border-radius: 0;
 
   &:focus {
     box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.35);
@@ -140,7 +146,25 @@
   filter: brightness(0) invert(1);
 }
 
-/* Tablette et mobile */
+@media (max-width: 1199.98px) {
+  .site-header .container {
+    padding-inline: 40px;
+  }
+
+  .site-logo {
+    margin-right: 28px;
+  }
+
+  .navbar-nav {
+    gap: 30px;
+  }
+
+  .btn-reservation {
+    min-width: 210px;
+    margin-left: 28px;
+  }
+}
+
 @media (max-width: $breakpoint-tablet) {
   .site-header {
     min-height: $header-height-mobile;
@@ -155,38 +179,47 @@
     }
   }
 
-  .site-logo img {
-    width: 140px;
+  .site-logo {
+    gap: 12px;
+    margin-right: 0;
+
+    img {
+      width: 58px;
+    }
+  }
+
+  .site-logo-text {
+    font-size: 15px;
+
+    small {
+      font-size: 7px;
+    }
   }
 
   .navbar-collapse {
     position: absolute;
     top: $header-height-mobile;
     left: 0;
-
     width: 100%;
-    padding: 24px;
-
-    background-color: $color-anthracite;
-
-    box-shadow: 0 12px 24px rgba(42, 45, 52, 0.25);
+    padding: 18px $mobile-padding 24px;
+    background-color: rgba(42, 45, 52, 0.96);
+    box-shadow: 0 12px 24px rgba(42, 45, 52, 0.3);
   }
 
   .navbar-nav {
     align-items: flex-start;
-    gap: 4px;
+    gap: 0;
   }
 
   .nav-link {
     width: 100%;
+    height: auto;
     padding: 14px 0 !important;
 
     &.active::after {
       left: 0;
-      bottom: 4px;
-
+      bottom: 8px;
       width: 42px;
-
       transform: none;
     }
   }
@@ -194,6 +227,6 @@
   .btn-reservation {
     width: 100%;
     min-width: 0;
-    margin-top: 20px;
+    margin: 18px 0 0;
   }
 }

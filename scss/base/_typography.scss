@@ -1,0 +1,34 @@
+body {
+  font-family: $font-body;
+  color: $color-ink;
+}
+
+.page-content {
+  min-height: 70vh;
+  padding-top: $header-height-desktop;
+  background-color: $color-cream;
+}
+
+.content-section {
+  padding: 72px 0;
+
+  h1 {
+    margin: 0 0 24px;
+    color: $color-bordeaux;
+    font-family: $font-display;
+    font-size: clamp(40px, 5vw, 64px);
+    font-weight: 400;
+  }
+
+  p {
+    max-width: 680px;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .page-content {
+    padding-top: $header-height-mobile;
+  }
+}

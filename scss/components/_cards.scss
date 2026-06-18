@@ -1,0 +1,134 @@
+.shows-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 196.27px);
+  gap: 48px;
+  align-items: start;
+}
+
+.show-card {
+  width: 196.27px;
+  height: 442px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 10px;
+  background-color: $color-anthracite;
+  box-shadow:
+    0 4px 10px rgba(42, 45, 52, 0.25),
+    0 14px 28px rgba(42, 45, 52, 0.18);
+}
+
+.show-card__media {
+  position: relative;
+  width: 197px;
+  height: 258px;
+  overflow: hidden;
+}
+
+.show-card__image {
+  width: 197px;
+  height: 258px;
+  object-fit: cover;
+}
+
+.show-card__badge {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 39px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  background-color: $color-bordeaux;
+  color: $color-cream;
+  text-align: center;
+  line-height: 1;
+
+  span {
+    display: block;
+    font-family: $font-display;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 19px;
+    letter-spacing: 0.2em;
+  }
+
+  small {
+    display: block;
+    margin-top: 3px;
+    font-family: $font-body;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 13px;
+    letter-spacing: 0.2em;
+    text-transform: none;
+  }
+}
+
+.show-card .card-body {
+  height: 184px;
+  display: flex;
+  flex-direction: column;
+  padding: 14px 6px 18px;
+  background-color: $color-anthracite;
+}
+
+.show-card__title {
+  width: 158px;
+  min-height: 52px;
+  margin: 0 0 13px;
+  color: $color-cream;
+  font-family: $font-display;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.show-card__category {
+  margin: 0;
+  color: $color-gold;
+  font-family: $font-body;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.show-card__schedule {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: auto;
+  color: $color-cream;
+  font-family: $font-body;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  .bi {
+    width: 25px;
+    height: 25px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-cream;
+    font-size: 25px;
+    line-height: 1;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .shows-grid {
+    grid-template-columns: repeat(auto-fit, minmax(196.27px, 196.27px));
+    gap: 28px;
+    justify-content: center;
+  }
+}

@@ -3,19 +3,22 @@ $color-bordeaux: #6b1d3a;
 $color-gold: #d4a843;
 $color-anthracite: #2a2d34;
 $color-cream: #f5f0e8;
+$color-ink: $color-anthracite;
 
 // Typographies
-$font-body: Arial, Helvetica, sans-serif;
+$font-body: "Inter", Arial, Helvetica, sans-serif;
+$font-display: "Playfair Display", Georgia, "Times New Roman", serif;
 
 // Espacements et dimensions
-$header-height-desktop: 110px;
-$header-height-mobile: 76px;
-$desktop-padding: 32px;
-$mobile-padding: 16px;
+$header-height-desktop: 130px;
+$header-height-mobile: 86px;
+$desktop-padding: 80px;
+$mobile-padding: 20px;
 
 // Effets
-$radius-small: 4px;
+$radius-small: 0;
 $transition-default: 0.25s ease;
 
 // Breakpoints
 $breakpoint-tablet: 991.98px;
+$breakpoint-mobile: 575.98px;

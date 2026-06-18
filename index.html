@@ -4,44 +4,136 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Le Phosphore — Accueil</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css?v=20260618" />
   </head>
   <body>
     <div id="header"></div>
 
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-8 col-lg-6">
-            <div class="hero-content mt-5">
-              <p class="hero-eyebrow">Bienvenue au</p>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-inner container">
+          <div class="hero-content">
+            <p class="hero-eyebrow">Bienvenue au</p>
 
-              <h1 id="hero-title" class="hero-title">Le Phosphore</h1>
+            <h1 id="hero-title" class="hero-title">Le Phosphore</h1>
 
-              <p class="hero-subtitle">La scène de toutes les émotions</p>
+            <p class="hero-subtitle">La scène de toutes les émotions</p>
 
-              <p class="hero-description">
-                Théâtre, stand-up, concerts, one-man-shows… Vivez des moments
-                uniques dans une salle chaleureuse au cœur de la ville.
-              </p>
+            <p class="hero-description">
+              Théâtre, stand-up, concerts, one-man-shows... Vivez des moments
+              uniques dans une salle chaleureuse au cœur de la ville.
+            </p>
 
-              <a href="programmation.html" class="hero-button">
-                Voir la programmation
-              </a>
-            </div>
+            <a href="programmation.html" class="hero-button">
+              Voir la programmation
+            </a>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="featured-shows" aria-labelledby="featured-shows-title">
+        <div class="featured-shows__container">
+          <div class="featured-shows__heading">
+            <p class="featured-shows__label">
+              <span></span>
+              À l'affiche
+            </p>
+
+            <h2 id="featured-shows-title">Nos spectacles phares</h2>
+          </div>
+
+          <div class="shows-grid">
+            <article class="show-card">
+              <div class="show-card__media">
+                <img
+                  src="assets/images/ChatGPT Image Jun 15, 2026, 10_48_46 PM (1).png"
+                  class="show-card__image"
+                  alt="Cyrano de Bergerac"
+                />
+                <div class="show-card__badge" aria-label="22 juin">
+                  <span>22</span>
+                  <small>Juin</small>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <h3 class="show-card__title">Cyrano de Bergerac</h3>
+                <p class="show-card__category">Théâtre</p>
+                <div class="show-card__schedule">
+                  <i class="bi bi-calendar" aria-hidden="true"></i>
+                  <span>22 juin · 20h30</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="show-card">
+              <div class="show-card__media">
+                <img
+                  src="assets/images/fca46ccd-8116-418e-b570-6ede6364a097.png"
+                  class="show-card__image"
+                  alt="Marina Music"
+                />
+                <div class="show-card__badge" aria-label="24 juin">
+                  <span>24</span>
+                  <small>Juin</small>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <h3 class="show-card__title">Marina Music</h3>
+                <p class="show-card__category">Concert</p>
+                <div class="show-card__schedule">
+                  <i class="bi bi-calendar" aria-hidden="true"></i>
+                  <span>24 juin · 21h30</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="show-card">
+              <div class="show-card__media">
+                <img
+                  src="assets/images/6a746338-24c8-4493-873c-a47e31bc7322.png"
+                  class="show-card__image"
+                  alt="Paul Music"
+                />
+                <div class="show-card__badge" aria-label="25 juin">
+                  <span>25</span>
+                  <small>Juin</small>
+                </div>
+              </div>
+
+              <div class="card-body">
+                <h3 class="show-card__title">Paul Music</h3>
+                <p class="show-card__category">Concert</p>
+                <div class="show-card__schedule">
+                  <i class="bi bi-calendar" aria-hidden="true"></i>
+                  <span>25 juin · 21h00</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <div id="footer"></div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/includes.js"></script>
+    <script src="js/includes.js?v=20260618"></script>
   </body>
 </html>
