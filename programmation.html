@@ -18,29 +18,156 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
     />
-    <link rel="stylesheet" href="css/style.css?v=20260618-about-figma" />
+    <link rel="stylesheet" href="css/style.css?v=20260618-program-4x2" />
   </head>
   <body>
     <div id="header"></div>
 
-    <main class="page-content">
-      <section class="content-section">
-        <div class="container">
-          <h1 class="featured-shows__label">
-            <span></span>
-            Programmation
-          </h1>
+    <main class="programming-page">
+      <!-- HERO -->
+      <section class="programming-hero">
+        <div class="programming-hero__overlay"></div>
 
-          <span>✦</span>
-          <p>Découvrez tous nos spectacles à venir.</p>
+        <div class="container">
+          <div class="programming-hero__content">
+            <h1 class="programming-hero__title">Programmation</h1>
+
+            <div class="programming-hero__ornament" aria-hidden="true">
+              <span></span>
+              ✦
+              <span></span>
+            </div>
+
+            <p class="programming-hero__subtitle">
+              Découvrez tous nos spectacles à venir.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILTRES + CARDS -->
+      <section class="programming-list">
+        <div class="container-xl programming-list__container">
+          <form class="programming-filters" id="showsFilters">
+            <div class="row g-4 align-items-end">
+              <div class="col-12 col-md-4 col-lg-3">
+                <label for="typeFilter" class="programming-filters__label">
+                  Type
+                </label>
+
+                <select
+                  id="typeFilter"
+                  class="form-select programming-filters__control"
+                >
+                  <option value="all">Tous les types</option>
+                  <option value="theatre">Théâtre</option>
+                  <option value="concert">Concert</option>
+                  <option value="standup">Stand-up</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-4 col-lg-3">
+                <label for="dateFilter" class="programming-filters__label">
+                  Date
+                </label>
+
+                <select
+                  id="dateFilter"
+                  class="form-select programming-filters__control"
+                >
+                  <option value="all">Sélectionner une date</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-md-4 col-lg-3">
+                <label
+                  for="availabilityFilter"
+                  class="programming-filters__label"
+                >
+                  Disponibilité
+                </label>
+
+                <select
+                  id="availabilityFilter"
+                  class="form-select programming-filters__control"
+                >
+                  <option value="all">Toutes les disponibilités</option>
+                  <option value="available">Disponible</option>
+                  <option value="few">Quelques places</option>
+                  <option value="soldout">Complet</option>
+                </select>
+              </div>
+
+              <div class="col-12 col-lg-3">
+                <div class="programming-filters__actions">
+                  <button type="submit" class="programming-filters__button">
+                    <i class="bi bi-funnel" aria-hidden="true"></i>
+                    Filtres
+                  </button>
+
+                  <button
+                    type="button"
+                    class="programming-filters__reset"
+                    id="resetFilters"
+                  >
+                    <i class="bi bi-arrow-clockwise" aria-hidden="true"></i>
+                    Réinitialiser
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="programming-list__top">
+            <p class="programming-list__count">
+              <span id="showsCount">0</span> spectacles trouvés
+            </p>
+
+            <div class="programming-list__sort">
+              <label for="sortShows">Trier par</label>
+
+              <select
+                id="sortShows"
+                class="form-select programming-list__sort-control"
+              >
+                <option value="date-asc">Date croissante</option>
+                <option value="date-desc">Date décroissante</option>
+                <option value="price-asc">Prix croissant</option>
+                <option value="price-desc">Prix décroissant</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="shows-cards" id="showsCards"></div>
+          <nav class="shows-pagination" aria-label="Pagination des spectacles">
+            <button
+              class="shows-pagination__button shows-pagination__button--active"
+              type="button"
+              aria-current="page"
+            >
+              1
+            </button>
+
+            <button class="shows-pagination__button" type="button">2</button>
+
+            <button class="shows-pagination__button" type="button">3</button>
+
+            <button
+              class="shows-pagination__next"
+              type="button"
+              aria-label="Page suivante"
+            >
+              <i class="bi bi-play-fill" aria-hidden="true"></i>
+            </button>
+          </nav>
         </div>
       </section>
     </main>
-
     <div id="footer"></div>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/includes.js?v=20260618"></script>
+    <script src="js/includes.js?v=20260618-footer-text"></script>
+    <script src="js/programmation.js?v=20260618-json-2"></script>
   </body>
 </html>
