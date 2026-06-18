@@ -1,0 +1,62 @@
+.Infos-Pratiques-Page {
+  background-color: $color-cream;
+}
+
+.Infos-Pratiques-hero {
+  position: relative;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../assets/images/Infos-Pratiques-hero.png");
+  background-position: center;
+  background-size: cover;
+  color: $color-cream;
+  overflow: hidden;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba($color-anthracite, 0.55);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    padding-top: 70px;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0;
+    color: $color-cream;
+    font-family: $font-display;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  &__ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 8px 0 10px;
+    color: $color-gold;
+    font-size: 20px;
+
+    span {
+      width: 42px;
+      height: 1px;
+      background-color: $color-gold;
+    }
+  }
+
+  &__subtitle {
+    margin: 0;
+    color: $color-gold;
+    font-family: $font-body;
+    font-size: 16px;
+    font-weight: 500;
+  }
+}

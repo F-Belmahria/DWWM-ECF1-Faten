@@ -74,6 +74,10 @@
   gap: 48px;
 }
 
+.site-header .navbar-nav .nav-link.active {
+  color: $color-cream;
+}
+
 .nav-link {
   position: relative;
 
@@ -99,7 +103,7 @@
   }
 
   &.active {
-    color: $color-gold;
+    color: $color-cream;
 
     &::after {
       content: "";

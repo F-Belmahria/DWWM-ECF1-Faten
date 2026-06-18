@@ -36,26 +36,43 @@ $body-font: "Inter", Arial, sans-serif;
   }
 
   &__brand {
-    max-width: 330px;
+    max-width: 225px;
   }
 
   &__logo-link {
     display: inline-block;
+    margin-bottom: 0.85rem;
+    color: $cream;
+    font-family: $heading-font;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0.03em;
     text-decoration: none;
-  }
+    text-transform: uppercase;
 
-  &__logo {
-    width: 120px;
-    height: auto;
-    margin-bottom: 1.25rem;
+    &:hover {
+      color: $cream;
+    }
+
+    span {
+      display: block;
+      margin-top: 0.35rem;
+      color: $gold;
+      font-family: $body-font;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.08em;
+    }
   }
 
   &__description {
-    max-width: 295px;
+    max-width: 225px;
     margin: 0;
     color: $cream;
-    font-size: 0.875rem;
-    line-height: 1.45;
+    font-size: 14px;
+    line-height: 1.35;
   }
 
   &__title {

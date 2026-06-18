@@ -1,1 +1,116 @@
-[]
+{
+  "spectacles": [
+    {
+      "id": 1,
+      "titre": "Cyrano de Bergerac",
+      "type": "theatre",
+      "description": "La célèbre pièce d'Edmond Rostand dans une mise en scène contemporaine audacieuse. Cyrano, poète et bretteur au nez légendaire, aime en secret sa cousine Roxane.",
+      "date": "2026-06-20",
+      "horaire": "20:30",
+      "duree": "2h30",
+      "prix": 32,
+      "places_total": 120,
+      "places_vendues": 87,
+      "artiste": "Cie Les Éclaireurs",
+      "image": "assets/images/Cyrano.png"
+    },
+    {
+      "id": 2,
+      "titre": "Marina Music - Électro-Pop Live",
+      "type": "concert",
+      "description": "Marina Music enflamme la scène avec son mélange unique d'électro-pop et de mélodies envoûtantes. Un show visuel et sonore à couper le souffle.",
+      "date": "2026-06-20",
+      "horaire": "21:00",
+      "duree": "1h45",
+      "prix": 28,
+      "places_total": 120,
+      "places_vendues": 120,
+      "artiste": "Marina Music",
+      "image": "assets/images/fca46ccd-8116-418e-b570-6ede6364a097.png"
+    },
+    {
+      "id": 3,
+      "titre": "Paul Music - Rock Indépendant",
+      "type": "concert",
+      "description": "Paul Music revient avec son énergie brute et ses riffs acérés. Rock indépendant, guitares saturées et textes engagés pour une soirée électrique.",
+      "date": "2026-06-21",
+      "horaire": "21:00",
+      "duree": "2h00",
+      "prix": 25,
+      "places_total": 120,
+      "places_vendues": 63,
+      "artiste": "Paul Music",
+      "image": "assets/images/6.png"
+    },
+    {
+      "id": 4,
+      "titre": "Fadily Camara - La plus drôle",
+      "type": "standup",
+      "description": "Fadily Camara débarque avec son nouveau spectacle hilarant. Entre anecdotes du quotidien et observations acérées, elle prouve une fois de plus qu'elle est la plus drôle.",
+      "date": "2026-06-21",
+      "horaire": "20:00",
+      "duree": "1h30",
+      "prix": 35,
+      "places_total": 120,
+      "places_vendues": 112,
+      "artiste": "Fadily Camara",
+      "image": "assets/images/5.png"
+    },
+    {
+      "id": 5,
+      "titre": "En attendant Godot",
+      "type": "theatre",
+      "description": "L'œuvre majeure de Samuel Beckett. Vladimir et Estragon attendent Godot, qui ne viendra jamais. Une réflexion absurde et profonde sur la condition humaine.",
+      "date": "2026-06-22",
+      "horaire": "19:30",
+      "duree": "2h00",
+      "prix": 28,
+      "places_total": 120,
+      "places_vendues": 120,
+      "artiste": "Cie du Passage",
+      "image": "assets/images/4.png"
+    },
+    {
+      "id": 6,
+      "titre": "Ahmed Music - Jazz Manouche",
+      "type": "concert",
+      "description": "Ahmed Music et son quartet invitent à un voyage musical entre Django Reinhardt et compositions originales. Guitares, violon et contrebasse pour une soirée swing.",
+      "date": "2026-06-22",
+      "horaire": "20:30",
+      "duree": "1h45",
+      "prix": 22,
+      "places_total": 120,
+      "places_vendues": 45,
+      "artiste": "Ahmed Music Quartet",
+      "image": "assets/images/6.png"
+    },
+    {
+      "id": 7,
+      "titre": "Nora Music - Chanson Française",
+      "type": "concert",
+      "description": "Nora Music revisite la chanson française avec élégance. De Piaf à ses propres compositions, sa voix puissante et ses arrangements raffinés captivent le public.",
+      "date": "2026-06-20",
+      "horaire": "19:00",
+      "duree": "1h30",
+      "prix": 24,
+      "places_total": 120,
+      "places_vendues": 78,
+      "artiste": "Nora Music",
+      "image": "assets/images/fca46ccd-8116-418e-b570-6ede6364a097.png"
+    },
+    {
+      "id": 8,
+      "titre": "Jamel Comedy Club",
+      "type": "standup",
+      "description": "Le mythique plateau du Jamel Comedy Club s'invite au Phosphore. Découvrez la nouvelle génération d'humoristes sélectionnés par Jamel Debbouze.",
+      "date": "2026-06-22",
+      "horaire": "21:30",
+      "duree": "2h00",
+      "prix": 30,
+      "places_total": 120,
+      "places_vendues": 98,
+      "artiste": "Jamel Comedy Club",
+      "image": "assets/images/fca46ccd-8116-418e-b570-6ede6364a097.png"
+    }
+  ]
+}
