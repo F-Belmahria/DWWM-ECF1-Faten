@@ -962,7 +962,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(42, 45, 52, 0.08) 0%, rgba(42, 45, 52, 0.34) 100%);
+  background: linear-gradient(90deg, transparent 0%, transparent 54%, rgba(107, 29, 58, 0.22) 68%, rgba(107, 29, 58, 0.46) 86%, rgba(42, 45, 52, 0.32) 100%), linear-gradient(180deg, rgba(42, 45, 52, 0.08) 0%, rgba(42, 45, 52, 0.34) 100%);
   pointer-events: none;
 }
 
@@ -1168,7 +1168,6 @@ body {
   }
 }
 .about {
-  padding: 92px 0 54px;
   background-color: #f5f0e8;
 }
 .about__container {
@@ -1523,8 +1522,8 @@ body {
   height: 48px;
   border: 0;
   border-radius: 50%;
-  background-color: #7b1748;
-  color: #f8f3eb;
+  background-color: #6b1d3a;
+  color: #f5f0e8;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1533,7 +1532,7 @@ body {
 }
 
 .shows-nav:hover {
-  background-color: #2b2118;
+  background-color: #2a2d34;
 }
 
 .shows-nav--prev {
@@ -1854,10 +1853,10 @@ body {
   content: "";
 }
 .show-card__status--available {
-  color: #2f9e44;
+  color: #d4a843;
 }
 .show-card__status--available::before {
-  background-color: #2f9e44;
+  background-color: #d4a843;
 }
 .show-card__status--few {
   color: #d4a843;
@@ -1866,10 +1865,10 @@ body {
   background-color: #d4a843;
 }
 .show-card__status--soldout {
-  color: #d64040;
+  color: #6b1d3a;
 }
 .show-card__status--soldout::before {
-  background-color: #d64040;
+  background-color: #6b1d3a;
 }
 .show-card__progress {
   height: 5px;
@@ -1880,13 +1879,13 @@ body {
 .show-card__progress-bar {
   height: 100%;
   border-radius: 999px;
-  background-color: #2f9e44;
+  background-color: #d4a843;
 }
 .show-card__progress-bar--few {
   background-color: #d4a843;
 }
 .show-card__progress-bar--soldout {
-  background-color: #d64040;
+  background-color: #6b1d3a;
 }
 
 @media (max-width: 991.98px) {
@@ -1930,8 +1929,8 @@ body {
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f3eee6;
-  color: #2b2118;
+  background-color: #f5f0e8;
+  color: #2a2d34;
 }
 
 .page {
@@ -1940,7 +1939,7 @@ body {
 
 h1 {
   margin-bottom: 25px;
-  color: #7b1748;
+  color: #6b1d3a;
 }
 
 /* Conteneur des cartes */
@@ -1955,28 +1954,28 @@ h1 {
   width: 100%;
   height: auto;
   display: block;
-  background-color: #f8f3eb;
-  border: 2px solid #ddd2c3;
+  background-color: #f5f0e8;
+  border: 2px solid rgba(42, 45, 52, 0.18);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(42, 45, 52, 0.08);
 }
 
 /* Bonus : or si disponible */
 .card-available {
-  border-color: gold;
+  border-color: #d4a843;
 }
 
 /* Bonus : bordeaux si complet */
 .card-sold-out {
-  border-color: #7b1748;
+  border-color: #6b1d3a;
 }
 
 /* Header de la card */
 .show-card-header {
   position: relative;
   height: 230px;
-  background-color: #2b2118;
+  background-color: #2a2d34;
 }
 
 .show-card-header img {
@@ -1990,11 +1989,11 @@ h1 {
 .image-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #7b1748, #2b2118);
+  background: linear-gradient(135deg, #6b1d3a, #2a2d34);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #f5f0e8;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -2004,8 +2003,8 @@ h1 {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: #7b1748;
-  color: white;
+  background-color: #6b1d3a;
+  color: #f5f0e8;
   width: 45px;
   height: 55px;
   border-radius: 8px;
@@ -2028,8 +2027,8 @@ h1 {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: white;
-  border: 1px solid white;
+  color: #f5f0e8;
+  border: 1px solid #f5f0e8;
   border-radius: 5px;
   width: 24px;
   height: 24px;
@@ -2046,8 +2045,8 @@ h1 {
 
 .type-badge {
   display: inline-block;
-  background-color: #efe5c8;
-  color: #4d3b1f;
+  background-color: rgba(212, 168, 67, 0.2);
+  color: #2a2d34;
   font-size: 10px;
   font-weight: bold;
   padding: 4px 7px;
@@ -2063,7 +2062,7 @@ h1 {
 
 .artist {
   font-size: 12px;
-  color: #5d554d;
+  color: rgba(42, 45, 52, 0.78);
   margin: 0 0 8px;
 }
 
@@ -2072,14 +2071,14 @@ h1 {
   justify-content: space-between;
   gap: 8px;
   font-size: 12px;
-  color: #5d554d;
+  color: rgba(42, 45, 52, 0.78);
   margin-bottom: 8px;
 }
 
 .price {
   font-size: 14px;
   font-weight: bold;
-  color: #7b1748;
+  color: #6b1d3a;
   margin-bottom: 8px;
 }
 
@@ -2091,21 +2090,21 @@ h1 {
 }
 
 .status.available {
-  color: #24a148;
+  color: #d4a843;
 }
 
 .status.few-left {
-  color: #d89500;
+  color: #d4a843;
 }
 
 .status.sold-out {
-  color: #d32727;
+  color: #6b1d3a;
 }
 
 /* Progress bar */
 .progress {
   height: 6px;
-  background-color: #e0d6c9;
+  background-color: rgba(42, 45, 52, 0.14);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -2116,20 +2115,20 @@ h1 {
 }
 
 .progress-bar.available {
-  background-color: #24a148;
+  background-color: #d4a843;
 }
 
 .progress-bar.few-left {
-  background-color: #d89500;
+  background-color: #d4a843;
 }
 
 .progress-bar.sold-out {
-  background-color: #d32727;
+  background-color: #6b1d3a;
 }
 
 .places {
   font-size: 11px;
-  color: #6b6259;
+  color: rgba(42, 45, 52, 0.78);
   margin-top: 6px;
 }
 
@@ -2251,6 +2250,33 @@ h1 {
   font-weight: 500;
 }
 
+/* Final overlap adjustment: keeps the rounded practical-info panel higher on the hero. */
+.practical-info {
+  margin-top: -115px;
+}
+.practical-info__container {
+  position: relative;
+  width: min(100% - 48px, 1180px);
+  margin-inline: auto;
+  border-radius: 16px 16px 0 0;
+}
+
+@media (max-width: 991.98px) {
+  .practical-info {
+    margin-top: -88px;
+  }
+  .practical-info__container {
+    width: min(100% - 32px, 760px);
+  }
+}
+@media (max-width: 575.98px) {
+  .practical-info {
+    margin-top: -56px;
+  }
+  .practical-info__container {
+    width: calc(100% - 24px);
+  }
+}
 @media (max-width: 991.98px) {
   .Infos-Pratiques-hero {
     min-height: 330px;
@@ -2280,5 +2306,895 @@ h1 {
   }
   .Infos-Pratiques-hero__subtitle br {
     display: none;
+  }
+}
+/* Practical info page */
+.practical-info {
+  position: relative;
+  z-index: 5;
+  margin-top: -55px;
+  padding-bottom: 70px;
+  background-color: #f5f0e8;
+}
+.practical-info__container {
+  padding: 34px 32px 44px;
+  background-color: #f5f0e8;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 12px 30px rgba(42, 45, 52, 0.12);
+}
+.practical-info__title {
+  position: relative;
+  margin: 0 0 30px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.practical-info__title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #d4a843;
+}
+.practical-info__services {
+  margin-bottom: 34px;
+}
+.practical-info__access-prices {
+  margin-bottom: 30px;
+}
+
+/* Service cards */
+.service-card {
+  min-height: 250px;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  overflow: hidden;
+  background-color: rgba(245, 240, 232, 0.75);
+  border: 1px solid rgba(42, 45, 52, 0.15);
+  border-radius: 8px;
+}
+.service-card__content {
+  padding: 26px 22px;
+}
+.service-card__icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  color: #d4a843;
+  background-color: #6b1d3a;
+  border: 1px solid #d4a843;
+  border-radius: 50%;
+  font-size: 28px;
+}
+.service-card__title {
+  margin: 0 0 14px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+.service-card__text {
+  margin: 0;
+  color: #2a2d34;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.service-card__image-wrapper {
+  height: 100%;
+}
+.service-card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Access card */
+.access-card {
+  height: 100%;
+  padding: 28px;
+  color: #f5f0e8;
+  background: linear-gradient(135deg, #6b1d3a 0%, #3b1020 100%);
+  border-radius: 8px;
+}
+.access-card__title {
+  position: relative;
+  margin: 0 0 28px;
+  color: #f5f0e8;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.access-card__title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #d4a843;
+}
+.access-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.access-card__item {
+  display: flex;
+  gap: 16px;
+}
+.access-card__icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4a843;
+  border: 1px solid #d4a843;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.access-card__subtitle {
+  margin: 0 0 6px;
+  color: #d4a843;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+.access-card__text {
+  margin: 0;
+  color: #f5f0e8;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.access-card__map {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.access-card__map-image {
+  width: 100%;
+  height: 260px;
+  display: block;
+  object-fit: cover;
+  border: 1px solid #d4a843;
+  border-radius: 8px;
+}
+.access-card__button {
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #d4a843;
+  border: 1px solid #d4a843;
+  border-radius: 6px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+.access-card__button:hover {
+  color: #2a2d34;
+  background-color: #d4a843;
+}
+
+/* Prices card */
+.prices-card {
+  height: 100%;
+  padding: 28px;
+  background-color: rgba(245, 240, 232, 0.75);
+  border: 1px solid rgba(42, 45, 52, 0.15);
+  border-radius: 8px;
+}
+.prices-card__title {
+  position: relative;
+  margin: 0 0 32px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.prices-card__title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #d4a843;
+}
+.prices-card__list {
+  padding: 0;
+  margin: 0 0 24px;
+  list-style: none;
+}
+.prices-card__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(42, 45, 52, 0.16);
+  color: #2a2d34;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.prices-card__item strong {
+  font-weight: 800;
+}
+.prices-card__note {
+  margin: 0 0 26px;
+  color: rgba(42, 45, 52, 0.7);
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.prices-card__button {
+  width: 100%;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #d4a843;
+  background-color: #6b1d3a;
+  border: 1px solid #6b1d3a;
+  border-radius: 6px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+.prices-card__button:hover {
+  color: #2a2d34;
+  background-color: #d4a843;
+  border-color: #d4a843;
+}
+
+/* Seat map */
+.seat-map {
+  padding: 26px 28px;
+  background-color: rgba(245, 240, 232, 0.75);
+  border: 1px solid rgba(42, 45, 52, 0.15);
+  border-radius: 8px;
+}
+.seat-map__title {
+  position: relative;
+  margin: 0 0 30px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.seat-map__title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #d4a843;
+}
+.seat-map__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: #2a2d34;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.seat-map__list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.seat-map__list i {
+  font-size: 20px;
+}
+.seat-map__dot {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 50%;
+}
+.seat-map__dot--category-one {
+  background-color: #6b1d3a;
+}
+.seat-map__dot--category-two {
+  background-color: #d4a843;
+}
+.seat-map__dot--category-three {
+  background-color: rgba(42, 45, 52, 0.45);
+}
+.seat-map__image-wrapper {
+  text-align: center;
+}
+.seat-map__image {
+  width: 100%;
+  max-width: 620px;
+  display: block;
+  margin-inline: auto;
+}
+.seat-map__info {
+  color: #2a2d34;
+}
+.seat-map__subtitle {
+  margin: 0 0 34px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+.seat-map__text {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0 0 22px;
+  color: #2a2d34;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.seat-map__text i {
+  color: #2a2d34;
+  font-size: 22px;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .practical-info {
+    margin-top: -35px;
+  }
+  .practical-info__container {
+    padding: 28px 20px 36px;
+  }
+  .service-card {
+    min-height: 230px;
+  }
+  .access-card__map-image {
+    height: 230px;
+  }
+  .seat-map__legend, .seat-map__info {
+    text-align: center;
+  }
+  .seat-map__list {
+    align-items: center;
+  }
+  .seat-map__text {
+    justify-content: center;
+  }
+}
+@media (max-width: 575.98px) {
+  .practical-info {
+    margin-top: -25px;
+  }
+  .practical-info__container {
+    padding: 24px 16px 32px;
+  }
+  .practical-info__title {
+    font-size: 26px;
+  }
+  .service-card {
+    grid-template-columns: 1fr;
+  }
+  .service-card__image-wrapper {
+    height: 190px;
+    order: -1;
+  }
+  .service-card__content {
+    padding: 22px 18px;
+  }
+  .access-card,
+  .prices-card,
+  .seat-map {
+    padding: 22px 18px;
+  }
+  .access-card__title,
+  .access-card .prices-card__title,
+  .access-card .seat-map__title {
+    font-size: 26px;
+  }
+  .access-card__item {
+    gap: 12px;
+  }
+  .access-card__map-image {
+    height: 200px;
+  }
+  .prices-card__title {
+    font-size: 26px;
+  }
+  .prices-card__item {
+    font-size: 13px;
+  }
+  .seat-map__title {
+    font-size: 26px;
+  }
+  .seat-map__subtitle {
+    font-size: 20px;
+  }
+}
+/* Final page override: this must stay at the bottom of the file. */
+.practical-info {
+  margin-top: -115px;
+}
+.practical-info__container {
+  position: relative;
+  width: min(100% - 48px, 1180px);
+  margin-inline: auto;
+  border-radius: 16px 16px 0 0;
+}
+
+@media (max-width: 991.98px) {
+  .practical-info {
+    margin-top: -88px;
+  }
+  .practical-info__container {
+    width: min(100% - 32px, 760px);
+  }
+}
+@media (max-width: 575.98px) {
+  .practical-info {
+    margin-top: -56px;
+  }
+  .practical-info__container {
+    width: calc(100% - 24px);
+  }
+}
+/* Final overlap adjustment: keeps the rounded practical-info panel higher on the hero. */
+.practical-info {
+  margin-top: -115px;
+}
+.practical-info__container {
+  position: relative;
+  width: min(100% - 48px, 1180px);
+  margin-inline: auto;
+  border-radius: 16px 16px 0 0;
+}
+
+@media (max-width: 991.98px) {
+  .practical-info {
+    margin-top: -88px;
+  }
+  .practical-info__container {
+    width: min(100% - 32px, 760px);
+  }
+}
+@media (max-width: 575.98px) {
+  .practical-info {
+    margin-top: -56px;
+  }
+  .practical-info__container {
+    width: calc(100% - 24px);
+  }
+}
+/* Practical info page */
+.practical-info {
+  position: relative;
+  z-index: 5;
+  margin-top: -55px;
+  padding-bottom: 70px;
+  background-color: #f5f0e8;
+}
+.practical-info__container {
+  padding: 34px 32px 44px;
+  background-color: #f5f0e8;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 12px 30px rgba(42, 45, 52, 0.12);
+}
+.practical-info__title {
+  position: relative;
+  margin: 0 0 30px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.practical-info__title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #d4a843;
+}
+.practical-info__services {
+  margin-bottom: 34px;
+}
+.practical-info__access-prices {
+  margin-bottom: 30px;
+}
+
+/* Service cards */
+.service-card {
+  min-height: 250px;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  overflow: hidden;
+  background-color: rgba(245, 240, 232, 0.75);
+  border: 1px solid rgba(42, 45, 52, 0.15);
+  border-radius: 8px;
+}
+.service-card__content {
+  padding: 26px 22px;
+}
+.service-card__icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  color: #d4a843;
+  background-color: #6b1d3a;
+  border: 1px solid #d4a843;
+  border-radius: 50%;
+  font-size: 28px;
+}
+.service-card__title {
+  margin: 0 0 14px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+.service-card__text {
+  margin: 0;
+  color: #2a2d34;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.service-card__image-wrapper {
+  height: 100%;
+}
+.service-card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Access card */
+.access-card {
+  height: 100%;
+  padding: 28px;
+  color: #f5f0e8;
+  background: linear-gradient(135deg, #6b1d3a 0%, #3b1020 100%);
+  border-radius: 8px;
+}
+.access-card__title {
+  position: relative;
+  margin: 0 0 28px;
+  color: #f5f0e8;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.access-card__title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #d4a843;
+}
+.access-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.access-card__item {
+  display: flex;
+  gap: 16px;
+}
+.access-card__icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #d4a843;
+  border: 1px solid #d4a843;
+  border-radius: 50%;
+  font-size: 20px;
+}
+.access-card__subtitle {
+  margin: 0 0 6px;
+  color: #d4a843;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+.access-card__text {
+  margin: 0;
+  color: #f5f0e8;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.access-card__map {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.access-card__map-image {
+  width: 100%;
+  height: 260px;
+  display: block;
+  object-fit: cover;
+  border: 1px solid #d4a843;
+  border-radius: 8px;
+}
+.access-card__button {
+  height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #d4a843;
+  border: 1px solid #d4a843;
+  border-radius: 6px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+.access-card__button:hover {
+  color: #2a2d34;
+  background-color: #d4a843;
+}
+
+/* Prices card */
+.prices-card {
+  height: 100%;
+  padding: 28px;
+  background-color: rgba(245, 240, 232, 0.75);
+  border: 1px solid rgba(42, 45, 52, 0.15);
+  border-radius: 8px;
+}
+.prices-card__title {
+  position: relative;
+  margin: 0 0 32px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.prices-card__title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #d4a843;
+}
+.prices-card__list {
+  padding: 0;
+  margin: 0 0 24px;
+  list-style: none;
+}
+.prices-card__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(42, 45, 52, 0.16);
+  color: #2a2d34;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.prices-card__item strong {
+  font-weight: 800;
+}
+.prices-card__note {
+  margin: 0 0 26px;
+  color: rgba(42, 45, 52, 0.7);
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.prices-card__button {
+  width: 100%;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #d4a843;
+  background-color: #6b1d3a;
+  border: 1px solid #6b1d3a;
+  border-radius: 6px;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+.prices-card__button:hover {
+  color: #2a2d34;
+  background-color: #d4a843;
+  border-color: #d4a843;
+}
+
+/* Seat map */
+.seat-map {
+  padding: 26px 28px;
+  background-color: rgba(245, 240, 232, 0.75);
+  border: 1px solid rgba(42, 45, 52, 0.15);
+  border-radius: 8px;
+}
+.seat-map__title {
+  position: relative;
+  margin: 0 0 30px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+.seat-map__title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 2px;
+  margin-top: 10px;
+  background-color: #d4a843;
+}
+.seat-map__list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: #2a2d34;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.seat-map__list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.seat-map__list i {
+  font-size: 20px;
+}
+.seat-map__dot {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  border-radius: 50%;
+}
+.seat-map__dot--category-one {
+  background-color: #6b1d3a;
+}
+.seat-map__dot--category-two {
+  background-color: #d4a843;
+}
+.seat-map__dot--category-three {
+  background-color: rgba(42, 45, 52, 0.45);
+}
+.seat-map__image-wrapper {
+  text-align: center;
+}
+.seat-map__image {
+  width: 100%;
+  max-width: 620px;
+  display: block;
+  margin-inline: auto;
+}
+.seat-map__info {
+  color: #2a2d34;
+}
+.seat-map__subtitle {
+  margin: 0 0 34px;
+  color: #2a2d34;
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  font-weight: 400;
+}
+.seat-map__text {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin: 0 0 22px;
+  color: #2a2d34;
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.seat-map__text i {
+  color: #2a2d34;
+  font-size: 22px;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .practical-info {
+    margin-top: -35px;
+  }
+  .practical-info__container {
+    padding: 28px 20px 36px;
+  }
+  .service-card {
+    min-height: 230px;
+  }
+  .access-card__map-image {
+    height: 230px;
+  }
+  .seat-map__legend, .seat-map__info {
+    text-align: center;
+  }
+  .seat-map__list {
+    align-items: center;
+  }
+  .seat-map__text {
+    justify-content: center;
+  }
+}
+@media (max-width: 575.98px) {
+  .practical-info {
+    margin-top: -25px;
+  }
+  .practical-info__container {
+    padding: 24px 16px 32px;
+  }
+  .practical-info__title {
+    font-size: 26px;
+  }
+  .service-card {
+    grid-template-columns: 1fr;
+  }
+  .service-card__image-wrapper {
+    height: 190px;
+    order: -1;
+  }
+  .service-card__content {
+    padding: 22px 18px;
+  }
+  .access-card,
+  .prices-card,
+  .seat-map {
+    padding: 22px 18px;
+  }
+  .access-card__title,
+  .access-card .prices-card__title,
+  .access-card .seat-map__title {
+    font-size: 26px;
+  }
+  .access-card__item {
+    gap: 12px;
+  }
+  .access-card__map-image {
+    height: 200px;
+  }
+  .prices-card__title {
+    font-size: 26px;
+  }
+  .prices-card__item {
+    font-size: 13px;
+  }
+  .seat-map__title {
+    font-size: 26px;
+  }
+  .seat-map__subtitle {
+    font-size: 20px;
   }
 }

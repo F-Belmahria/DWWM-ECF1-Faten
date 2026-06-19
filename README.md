@@ -201,16 +201,21 @@ Before final delivery, the following checks should be completed:
 
 - HTML validation with W3C Validator
 - CSS validation
-- JavaScript linting with ESLint
+- JavaScript linting with ESLint after the linter setup is completed
 - Responsive screenshots on desktop, tablet, and mobile
 - Browser testing on Chrome and at least one other browser
 - Accessibility checks for contrast, keyboard navigation, and screen reader structure
 
-Run project checks:
+Available project commands:
 
 ```bash
-npm run check
+npm run build
+npm run watch
+npm run lint
 ```
+
+Note: `npm run lint` requires ESLint to be available in the project dependencies.
+If the command fails, install or configure ESLint before final delivery.
 
 ## Deployment
 

@@ -61,6 +61,38 @@
   }
 }
 
+/* Final overlap adjustment: keeps the rounded practical-info panel higher on the hero. */
+.practical-info {
+  margin-top: -115px;
+
+  &__container {
+    position: relative;
+    width: min(100% - 48px, 1180px);
+    margin-inline: auto;
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .practical-info {
+    margin-top: -88px;
+
+    &__container {
+      width: min(100% - 32px, 760px);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .practical-info {
+    margin-top: -56px;
+
+    &__container {
+      width: calc(100% - 24px);
+    }
+  }
+}
+
 @media (max-width: $breakpoint-tablet) {
   .Infos-Pratiques-hero {
     min-height: 330px;
@@ -96,6 +128,1078 @@
       br {
         display: none;
       }
+    }
+  }
+}
+/* Practical info page */
+
+.practical-info {
+  position: relative;
+  z-index: 5;
+  margin-top: -55px;
+  padding-bottom: 70px;
+  background-color: $color-cream;
+
+  &__container {
+    padding: 34px 32px 44px;
+    background-color: $color-cream;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 12px 30px rgba($color-anthracite, 0.12);
+  }
+
+  &__title {
+    position: relative;
+    margin: 0 0 30px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 30px;
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 2px;
+      margin-top: 10px;
+      background-color: $color-gold;
+    }
+  }
+
+  &__services {
+    margin-bottom: 34px;
+  }
+
+  &__access-prices {
+    margin-bottom: 30px;
+  }
+}
+
+/* Service cards */
+
+.service-card {
+  min-height: 250px;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  overflow: hidden;
+  background-color: rgba($color-cream, 0.75);
+  border: 1px solid rgba($color-anthracite, 0.15);
+  border-radius: 8px;
+
+  &__content {
+    padding: 26px 22px;
+  }
+
+  &__icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    color: $color-gold;
+    background-color: $color-bordeaux;
+    border: 1px solid $color-gold;
+    border-radius: 50%;
+    font-size: 28px;
+  }
+
+  &__title {
+    margin: 0 0 14px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-anthracite;
+    font-family: $font-body;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  &__image-wrapper {
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+/* Access card */
+
+.access-card {
+  height: 100%;
+  padding: 28px;
+  color: $color-cream;
+  background: linear-gradient(
+    135deg,
+    $color-bordeaux 0%,
+    darken($color-bordeaux, 12%) 100%
+  );
+  border-radius: 8px;
+
+  &__title {
+    position: relative;
+    margin: 0 0 28px;
+    color: $color-cream;
+    font-family: $font-display;
+    font-size: 30px;
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 2px;
+      margin-top: 10px;
+      background-color: $color-gold;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gold;
+    border: 1px solid $color-gold;
+    border-radius: 50%;
+    font-size: 20px;
+  }
+
+  &__subtitle {
+    margin: 0 0 6px;
+    color: $color-gold;
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-cream;
+    font-family: $font-body;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  &__map {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  &__map-image {
+    width: 100%;
+    height: 260px;
+    display: block;
+    object-fit: cover;
+    border: 1px solid $color-gold;
+    border-radius: 8px;
+  }
+
+  &__button {
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: $color-gold;
+    border: 1px solid $color-gold;
+    border-radius: 6px;
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $color-anthracite;
+      background-color: $color-gold;
+    }
+  }
+}
+
+/* Prices card */
+
+.prices-card {
+  height: 100%;
+  padding: 28px;
+  background-color: rgba($color-cream, 0.75);
+  border: 1px solid rgba($color-anthracite, 0.15);
+  border-radius: 8px;
+
+  &__title {
+    position: relative;
+    margin: 0 0 32px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 30px;
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 2px;
+      margin-top: 10px;
+      background-color: $color-gold;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0 0 24px;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba($color-anthracite, 0.16);
+    color: $color-anthracite;
+    font-family: $font-body;
+    font-size: 14px;
+
+    strong {
+      font-weight: 800;
+    }
+  }
+
+  &__note {
+    margin: 0 0 26px;
+    color: rgba($color-anthracite, 0.7);
+    font-family: $font-body;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  &__button {
+    width: 100%;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: $color-gold;
+    background-color: $color-bordeaux;
+    border: 1px solid $color-bordeaux;
+    border-radius: 6px;
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $color-anthracite;
+      background-color: $color-gold;
+      border-color: $color-gold;
+    }
+  }
+}
+
+/* Seat map */
+
+.seat-map {
+  padding: 26px 28px;
+  background-color: rgba($color-cream, 0.75);
+  border: 1px solid rgba($color-anthracite, 0.15);
+  border-radius: 8px;
+
+  &__title {
+    position: relative;
+    margin: 0 0 30px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 30px;
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 2px;
+      margin-top: 10px;
+      background-color: $color-gold;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: $color-anthracite;
+    font-family: $font-body;
+    font-size: 14px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    i {
+      font-size: 20px;
+    }
+  }
+
+  &__dot {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    border-radius: 50%;
+
+    &--category-one {
+      background-color: $color-bordeaux;
+    }
+
+    &--category-two {
+      background-color: $color-gold;
+    }
+
+    &--category-three {
+      background-color: rgba($color-anthracite, 0.45);
+    }
+  }
+
+  &__image-wrapper {
+    text-align: center;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 620px;
+    display: block;
+    margin-inline: auto;
+  }
+
+  &__info {
+    color: $color-anthracite;
+  }
+
+  &__subtitle {
+    margin: 0 0 34px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  &__text {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 0 0 22px;
+    color: $color-anthracite;
+    font-family: $font-body;
+    font-size: 14px;
+    line-height: 1.4;
+
+    i {
+      color: $color-anthracite;
+      font-size: 22px;
+    }
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 991.98px) {
+  .practical-info {
+    margin-top: -35px;
+
+    &__container {
+      padding: 28px 20px 36px;
+    }
+  }
+
+  .service-card {
+    min-height: 230px;
+  }
+
+  .access-card {
+    &__map-image {
+      height: 230px;
+    }
+  }
+
+  .seat-map {
+    &__legend,
+    &__info {
+      text-align: center;
+    }
+
+    &__list {
+      align-items: center;
+    }
+
+    &__text {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .practical-info {
+    margin-top: -25px;
+
+    &__container {
+      padding: 24px 16px 32px;
+    }
+
+    &__title {
+      font-size: 26px;
+    }
+  }
+
+  .service-card {
+    grid-template-columns: 1fr;
+
+    &__image-wrapper {
+      height: 190px;
+      order: -1;
+    }
+
+    &__content {
+      padding: 22px 18px;
+    }
+  }
+
+  .access-card,
+  .prices-card,
+  .seat-map {
+    padding: 22px 18px;
+  }
+
+  .access-card {
+    &__title,
+    .prices-card__title,
+    .seat-map__title {
+      font-size: 26px;
+    }
+
+    &__item {
+      gap: 12px;
+    }
+
+    &__map-image {
+      height: 200px;
+    }
+  }
+
+  .prices-card {
+    &__title {
+      font-size: 26px;
+    }
+
+    &__item {
+      font-size: 13px;
+    }
+  }
+
+  .seat-map {
+    &__title {
+      font-size: 26px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
+    }
+  }
+}
+
+/* Final page override: this must stay at the bottom of the file. */
+.practical-info {
+  margin-top: -115px;
+
+  &__container {
+    position: relative;
+    width: min(100% - 48px, 1180px);
+    margin-inline: auto;
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .practical-info {
+    margin-top: -88px;
+
+    &__container {
+      width: min(100% - 32px, 760px);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .practical-info {
+    margin-top: -56px;
+
+    &__container {
+      width: calc(100% - 24px);
+    }
+  }
+}
+
+/* Final overlap adjustment: keeps the rounded practical-info panel higher on the hero. */
+.practical-info {
+  margin-top: -115px;
+
+  &__container {
+    position: relative;
+    width: min(100% - 48px, 1180px);
+    margin-inline: auto;
+    border-radius: 16px 16px 0 0;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .practical-info {
+    margin-top: -88px;
+
+    &__container {
+      width: min(100% - 32px, 760px);
+    }
+  }
+}
+
+@media (max-width: $breakpoint-mobile) {
+  .practical-info {
+    margin-top: -56px;
+
+    &__container {
+      width: calc(100% - 24px);
+    }
+  }
+}
+/* Practical info page */
+
+.practical-info {
+  position: relative;
+  z-index: 5;
+  margin-top: -55px;
+  padding-bottom: 70px;
+  background-color: $color-cream;
+
+  &__container {
+    padding: 34px 32px 44px;
+    background-color: $color-cream;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 12px 30px rgba($color-anthracite, 0.12);
+  }
+
+  &__title {
+    position: relative;
+    margin: 0 0 30px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 30px;
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 2px;
+      margin-top: 10px;
+      background-color: $color-gold;
+    }
+  }
+
+  &__services {
+    margin-bottom: 34px;
+  }
+
+  &__access-prices {
+    margin-bottom: 30px;
+  }
+}
+
+/* Service cards */
+
+.service-card {
+  min-height: 250px;
+  display: grid;
+  grid-template-columns: 58% 42%;
+  overflow: hidden;
+  background-color: rgba($color-cream, 0.75);
+  border: 1px solid rgba($color-anthracite, 0.15);
+  border-radius: 8px;
+
+  &__content {
+    padding: 26px 22px;
+  }
+
+  &__icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    color: $color-gold;
+    background-color: $color-bordeaux;
+    border: 1px solid $color-gold;
+    border-radius: 50%;
+    font-size: 28px;
+  }
+
+  &__title {
+    margin: 0 0 14px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-anthracite;
+    font-family: $font-body;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  &__image-wrapper {
+    height: 100%;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+/* Access card */
+
+.access-card {
+  height: 100%;
+  padding: 28px;
+  color: $color-cream;
+  background: linear-gradient(
+    135deg,
+    $color-bordeaux 0%,
+    darken($color-bordeaux, 12%) 100%
+  );
+  border-radius: 8px;
+
+  &__title {
+    position: relative;
+    margin: 0 0 28px;
+    color: $color-cream;
+    font-family: $font-display;
+    font-size: 30px;
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 2px;
+      margin-top: 10px;
+      background-color: $color-gold;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+
+  &__item {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__icon {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-gold;
+    border: 1px solid $color-gold;
+    border-radius: 50%;
+    font-size: 20px;
+  }
+
+  &__subtitle {
+    margin: 0 0 6px;
+    color: $color-gold;
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin: 0;
+    color: $color-cream;
+    font-family: $font-body;
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  &__map {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  &__map-image {
+    width: 100%;
+    height: 260px;
+    display: block;
+    object-fit: cover;
+    border: 1px solid $color-gold;
+    border-radius: 8px;
+  }
+
+  &__button {
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: $color-gold;
+    border: 1px solid $color-gold;
+    border-radius: 6px;
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $color-anthracite;
+      background-color: $color-gold;
+    }
+  }
+}
+
+/* Prices card */
+
+.prices-card {
+  height: 100%;
+  padding: 28px;
+  background-color: rgba($color-cream, 0.75);
+  border: 1px solid rgba($color-anthracite, 0.15);
+  border-radius: 8px;
+
+  &__title {
+    position: relative;
+    margin: 0 0 32px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 30px;
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 2px;
+      margin-top: 10px;
+      background-color: $color-gold;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    margin: 0 0 24px;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba($color-anthracite, 0.16);
+    color: $color-anthracite;
+    font-family: $font-body;
+    font-size: 14px;
+
+    strong {
+      font-weight: 800;
+    }
+  }
+
+  &__note {
+    margin: 0 0 26px;
+    color: rgba($color-anthracite, 0.7);
+    font-family: $font-body;
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  &__button {
+    width: 100%;
+    height: 56px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: $color-gold;
+    background-color: $color-bordeaux;
+    border: 1px solid $color-bordeaux;
+    border-radius: 6px;
+    font-family: $font-body;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $color-anthracite;
+      background-color: $color-gold;
+      border-color: $color-gold;
+    }
+  }
+}
+
+/* Seat map */
+
+.seat-map {
+  padding: 26px 28px;
+  background-color: rgba($color-cream, 0.75);
+  border: 1px solid rgba($color-anthracite, 0.15);
+  border-radius: 8px;
+
+  &__title {
+    position: relative;
+    margin: 0 0 30px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 30px;
+    font-weight: 400;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 38px;
+      height: 2px;
+      margin-top: 10px;
+      background-color: $color-gold;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: $color-anthracite;
+    font-family: $font-body;
+    font-size: 14px;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    i {
+      font-size: 20px;
+    }
+  }
+
+  &__dot {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    border-radius: 50%;
+
+    &--category-one {
+      background-color: $color-bordeaux;
+    }
+
+    &--category-two {
+      background-color: $color-gold;
+    }
+
+    &--category-three {
+      background-color: rgba($color-anthracite, 0.45);
+    }
+  }
+
+  &__image-wrapper {
+    text-align: center;
+  }
+
+  &__image {
+    width: 100%;
+    max-width: 620px;
+    display: block;
+    margin-inline: auto;
+  }
+
+  &__info {
+    color: $color-anthracite;
+  }
+
+  &__subtitle {
+    margin: 0 0 34px;
+    color: $color-anthracite;
+    font-family: $font-display;
+    font-size: 22px;
+    font-weight: 400;
+  }
+
+  &__text {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 0 0 22px;
+    color: $color-anthracite;
+    font-family: $font-body;
+    font-size: 14px;
+    line-height: 1.4;
+
+    i {
+      color: $color-anthracite;
+      font-size: 22px;
+    }
+  }
+}
+
+/* Responsive */
+
+@media (max-width: 991.98px) {
+  .practical-info {
+    margin-top: -35px;
+
+    &__container {
+      padding: 28px 20px 36px;
+    }
+  }
+
+  .service-card {
+    min-height: 230px;
+  }
+
+  .access-card {
+    &__map-image {
+      height: 230px;
+    }
+  }
+
+  .seat-map {
+    &__legend,
+    &__info {
+      text-align: center;
+    }
+
+    &__list {
+      align-items: center;
+    }
+
+    &__text {
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .practical-info {
+    margin-top: -25px;
+
+    &__container {
+      padding: 24px 16px 32px;
+    }
+
+    &__title {
+      font-size: 26px;
+    }
+  }
+
+  .service-card {
+    grid-template-columns: 1fr;
+
+    &__image-wrapper {
+      height: 190px;
+      order: -1;
+    }
+
+    &__content {
+      padding: 22px 18px;
+    }
+  }
+
+  .access-card,
+  .prices-card,
+  .seat-map {
+    padding: 22px 18px;
+  }
+
+  .access-card {
+    &__title,
+    .prices-card__title,
+    .seat-map__title {
+      font-size: 26px;
+    }
+
+    &__item {
+      gap: 12px;
+    }
+
+    &__map-image {
+      height: 200px;
+    }
+  }
+
+  .prices-card {
+    &__title {
+      font-size: 26px;
+    }
+
+    &__item {
+      font-size: 13px;
+    }
+  }
+
+  .seat-map {
+    &__title {
+      font-size: 26px;
+    }
+
+    &__subtitle {
+      font-size: 20px;
     }
   }
 }

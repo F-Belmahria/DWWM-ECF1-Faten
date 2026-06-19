@@ -316,10 +316,10 @@
     }
 
     &--available {
-      color: #2f9e44;
+      color: $color-gold;
 
       &::before {
-        background-color: #2f9e44;
+        background-color: $color-gold;
       }
     }
 
@@ -332,10 +332,10 @@
     }
 
     &--soldout {
-      color: #d64040;
+      color: $color-bordeaux;
 
       &::before {
-        background-color: #d64040;
+        background-color: $color-bordeaux;
       }
     }
   }
@@ -350,14 +350,14 @@
   &__progress-bar {
     height: 100%;
     border-radius: 999px;
-    background-color: #2f9e44;
+    background-color: $color-gold;
 
     &--few {
       background-color: $color-gold;
     }
 
     &--soldout {
-      background-color: #d64040;
+      background-color: $color-bordeaux;
     }
   }
 }
@@ -416,8 +416,8 @@
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f3eee6;
-  color: #2b2118;
+  background-color: $color-cream;
+  color: $color-anthracite;
 }
 
 .page {
@@ -426,7 +426,7 @@ body {
 
 h1 {
   margin-bottom: 25px;
-  color: #7b1748;
+  color: $color-bordeaux;
 }
 
 /* Conteneur des cartes */
@@ -441,28 +441,28 @@ h1 {
   width: 100%;
   height: auto;
   display: block;
-  background-color: #f8f3eb;
-  border: 2px solid #ddd2c3;
+  background-color: $color-cream;
+  border: 2px solid rgba($color-anthracite, 0.18);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba($color-anthracite, 0.08);
 }
 
 /* Bonus : or si disponible */
 .card-available {
-  border-color: gold;
+  border-color: $color-gold;
 }
 
 /* Bonus : bordeaux si complet */
 .card-sold-out {
-  border-color: #7b1748;
+  border-color: $color-bordeaux;
 }
 
 /* Header de la card */
 .show-card-header {
   position: relative;
   height: 230px;
-  background-color: #2b2118;
+  background-color: $color-anthracite;
 }
 
 .show-card-header img {
@@ -476,11 +476,11 @@ h1 {
 .image-placeholder {
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, #7b1748, #2b2118);
+  background: linear-gradient(135deg, $color-bordeaux, $color-anthracite);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: $color-cream;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -490,8 +490,8 @@ h1 {
   position: absolute;
   top: 10px;
   left: 10px;
-  background-color: #7b1748;
-  color: white;
+  background-color: $color-bordeaux;
+  color: $color-cream;
   width: 45px;
   height: 55px;
   border-radius: 8px;
@@ -514,8 +514,8 @@ h1 {
   position: absolute;
   top: 10px;
   right: 10px;
-  color: white;
-  border: 1px solid white;
+  color: $color-cream;
+  border: 1px solid $color-cream;
   border-radius: 5px;
   width: 24px;
   height: 24px;
@@ -532,8 +532,8 @@ h1 {
 
 .type-badge {
   display: inline-block;
-  background-color: #efe5c8;
-  color: #4d3b1f;
+  background-color: rgba($color-gold, 0.2);
+  color: $color-anthracite;
   font-size: 10px;
   font-weight: bold;
   padding: 4px 7px;
@@ -549,7 +549,7 @@ h1 {
 
 .artist {
   font-size: 12px;
-  color: #5d554d;
+  color: rgba($color-anthracite, 0.78);
   margin: 0 0 8px;
 }
 
@@ -558,14 +558,14 @@ h1 {
   justify-content: space-between;
   gap: 8px;
   font-size: 12px;
-  color: #5d554d;
+  color: rgba($color-anthracite, 0.78);
   margin-bottom: 8px;
 }
 
 .price {
   font-size: 14px;
   font-weight: bold;
-  color: #7b1748;
+  color: $color-bordeaux;
   margin-bottom: 8px;
 }
 
@@ -577,21 +577,21 @@ h1 {
 }
 
 .status.available {
-  color: #24a148;
+  color: $color-gold;
 }
 
 .status.few-left {
-  color: #d89500;
+  color: $color-gold;
 }
 
 .status.sold-out {
-  color: #d32727;
+  color: $color-bordeaux;
 }
 
 /* Progress bar */
 .progress {
   height: 6px;
-  background-color: #e0d6c9;
+  background-color: rgba($color-anthracite, 0.14);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -602,20 +602,20 @@ h1 {
 }
 
 .progress-bar.available {
-  background-color: #24a148;
+  background-color: $color-gold;
 }
 
 .progress-bar.few-left {
-  background-color: #d89500;
+  background-color: $color-gold;
 }
 
 .progress-bar.sold-out {
-  background-color: #d32727;
+  background-color: $color-bordeaux;
 }
 
 .places {
   font-size: 11px;
-  color: #6b6259;
+  color: rgba($color-anthracite, 0.78);
   margin-top: 6px;
 }
 

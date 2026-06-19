@@ -11,6 +11,7 @@ const dataVersion = "20260619-show-eight-3";
 let allSpectacles = [];
 
 if (showsCards) {
+  // Load the shows from JSON so the cards can be updated without editing HTML.
   fetch(`assets/data/spectacles.json?v=${dataVersion}`)
     .then(function (response) {
       if (!response.ok) {
@@ -35,6 +36,7 @@ if (showsCards) {
 }
 
 function setupFilters() {
+  // The form submit is intercepted to filter the cards without reloading the page.
   if (showsFilters) {
     showsFilters.addEventListener("submit", function (event) {
       event.preventDefault();
@@ -46,12 +48,14 @@ function setupFilters() {
     filter
   ) {
     if (filter) {
+      // Each filter immediately refreshes the visible list when its value changes.
       filter.addEventListener("change", applyFilters);
     }
   });
 
   if (resetFilters) {
     resetFilters.addEventListener("click", function () {
+      // Reset all controls to their default state before rendering the full list again.
       if (typeFilter) {
         typeFilter.value = "all";
       }
@@ -74,6 +78,7 @@ function setupFilters() {
 }
 
 function applyFilters() {
+  // Keep only the shows matching the selected type, date, and availability.
   let filteredSpectacles = allSpectacles.filter(function (spectacle) {
     const matchType =
       !typeFilter ||
@@ -100,6 +105,7 @@ function applyFilters() {
 }
 
 function renderShows(spectacles) {
+  // Rebuild the card grid from scratch to keep the DOM synchronized with filters.
   showsCards.innerHTML = "";
 
   if (spectacles.length === 0) {
@@ -123,6 +129,7 @@ function setupDatePicker(spectacles) {
 
   const dates = [];
 
+  // Collect unique dates from JSON and use them to limit the native date input.
   spectacles.forEach(function (spectacle) {
     if (!dates.includes(spectacle.date)) {
       dates.push(spectacle.date);
@@ -138,6 +145,7 @@ function setupDatePicker(spectacles) {
 
 function sortSpectacles(spectacles) {
   const sortValue = sortShows ? sortShows.value : "date-asc";
+  // Clone the array before sorting so the original JSON order stays unchanged.
   const sortedSpectacles = spectacles.slice();
 
   sortedSpectacles.sort(function (first, second) {
@@ -160,6 +168,7 @@ function sortSpectacles(spectacles) {
 }
 
 function getAvailability(spectacle) {
+  // Availability is calculated from sold seats instead of being duplicated in JSON.
   const placesRestantes = spectacle.places_total - spectacle.places_vendues;
 
   if (placesRestantes === 0) {
@@ -178,6 +187,7 @@ function createShowCard(spectacle) {
   const placesVendues = spectacle.places_vendues;
   const placesRestantes = placesTotal - placesVendues;
 
+  // The progress bar width represents sold seats out of the total capacity.
   const pourcentage = (placesVendues / placesTotal) * 100;
 
   let statut = "";
@@ -203,6 +213,7 @@ function createShowCard(spectacle) {
 
   let imagePart = "";
 
+  // If a show has no image, a text placeholder keeps the card layout stable.
   if (spectacle.image !== "") {
     imagePart = `
   <img 
@@ -282,6 +293,7 @@ function createShowCard(spectacle) {
 }
 
 function formatDate(dateText) {
+  // Convert the ISO date from JSON into the short badge format used in the cards.
   const parts = dateText.split("-");
   const moisNumero = Number(parts[1]);
   const jour = parts[2];
@@ -308,6 +320,7 @@ function formatDate(dateText) {
 }
 
 function formatType(type) {
+  // Display user-friendly category labels while keeping simple values in JSON.
   if (type === "theatre") {
     return "THÉÂTRE";
   }
@@ -324,6 +337,7 @@ function formatType(type) {
 }
 
 function getImagePath(image) {
+  // Accept several image path formats to make JSON editing easier.
   if (image.startsWith("assets/")) {
     return image;
   }

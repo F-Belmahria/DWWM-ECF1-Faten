@@ -21,7 +21,6 @@
     z-index: -1;
     background: url("../assets/images/rideaux.webp") center top / cover
       no-repeat;
-    mix-blend-mode: screen;
     pointer-events: none;
   }
 
@@ -30,11 +29,20 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: linear-gradient(
-      180deg,
-      rgba(42, 45, 52, 0.08) 0%,
-      rgba(42, 45, 52, 0.34) 100%
-    );
+    background:
+      linear-gradient(
+        90deg,
+        transparent 0%,
+        transparent 48%,
+        rgba($color-bordeaux, 0.38) 62%,
+        rgba($color-bordeaux, 0.68) 82%,
+        rgba($color-anthracite, 0.5) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba($color-anthracite, 0.08) 0%,
+        rgba($color-anthracite, 0.34) 100%
+      );
     pointer-events: none;
   }
 }
@@ -271,7 +279,6 @@
   }
 }
 .about {
-  padding: 92px 0 54px;
   background-color: $color-cream;
 
   &__container {
@@ -689,8 +696,8 @@
   height: 48px;
   border: 0;
   border-radius: 50%;
-  background-color: #7b1748;
-  color: #f8f3eb;
+  background-color: $color-bordeaux;
+  color: $color-cream;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -699,7 +706,7 @@
 }
 
 .shows-nav:hover {
-  background-color: #2b2118;
+  background-color: $color-anthracite;
 }
 
 .shows-nav--prev {
