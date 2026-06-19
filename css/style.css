@@ -2517,7 +2517,7 @@ h1 {
   height: 100%;
   padding: 28px;
   color: #f5f0e8;
-  background: linear-gradient(135deg, #6b1d3a 0%, #3b1020 100%);
+  background: linear-gradient(135deg, #6b1d3a 0%, rgb(58.85, 15.95, 31.9) 100%);
   border-radius: 8px;
 }
 .access-card__title {
@@ -2950,7 +2950,7 @@ h1 {
   height: 100%;
   padding: 28px;
   color: #f5f0e8;
-  background: linear-gradient(135deg, #6b1d3a 0%, #3b1020 100%);
+  background: linear-gradient(135deg, #6b1d3a 0%, rgb(58.85, 15.95, 31.9) 100%);
   border-radius: 8px;
 }
 .access-card__title {

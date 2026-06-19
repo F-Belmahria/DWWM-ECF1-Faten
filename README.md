@@ -179,8 +179,6 @@ Accessibility was considered through:
 - responsive typography
 - contrast based on the provided color palette
 
-Further RGAA testing should be completed before final delivery.
-
 ## Design Guidelines
 
 The project follows the client color palette:
@@ -196,8 +194,6 @@ Typography:
 - Body text: Inter
 
 ## Validation and Testing
-
-Before final delivery, the following checks should be completed:
 
 - HTML validation with W3C Validator
 - CSS validation
@@ -217,9 +213,42 @@ npm run lint
 Note: `npm run lint` requires ESLint to be available in the project dependencies.
 If the command fails, install or configure ESLint before final delivery.
 
-## Deployment
+## Code Validation
 
-The project can be deployed using:
+Validation date: 19 June 2026
+
+### Build Status
+
+**Last Build: 19 June 2026 - 14:52 UTC+2**
+
+The `npm run build` command successfully compiled Sass to CSS.
+
+Build output:
+
+- Successfully compiled `scss/style.scss` to `css/style.css`
+- Exit code: 0 (success)
+- Deprecation warnings identified:
+  - Sass `@import` rules are deprecated (recommend migration to `@use` in Dart Sass 3.0.0)
+  - Use of `darken()` function is deprecated (recommend `color.adjust()` or `color.scale()`)
+
+### Validation Details
+
+The HTML pages were checked with the W3C Markup Validation Service:
+
+- `index.html`
+- `programmation.html`
+- `infos-pratiques.html`
+
+The compiled CSS file `css/style.css` was checked with the W3C CSS Validator.
+
+Result: no major blocking errors detected.
+
+JavaScript validation with ESLint is planned. The project scripts include `npm run lint`.
+
+- HTML validation: [W3C Markup Validation Service](https://validator.w3.org/)
+- CSS validation: [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
+
+## Deployment
 
 - GitHub Pages
 - A secure hosting provider with HTTPS
