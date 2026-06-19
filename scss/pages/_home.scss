@@ -669,6 +669,13 @@
   flex: 0 0 calc((100% - 90px) / 4);
 }
 
+/* Featured cards need enough height to keep title, category, and date visible. */
+.featured-shows .show-card {
+  height: 612px;
+  display: flex;
+  flex-direction: column;
+}
+
 /* Bigger images */
 .show-card__media {
   height: 360px;
@@ -679,6 +686,33 @@
   height: 100%;
   object-fit: cover;
   object-position: center top;
+}
+
+.featured-shows .show-card .card-body {
+  flex: 1;
+  min-height: 0;
+  padding: 22px 14px 20px;
+}
+
+.featured-shows .show-card__title {
+  width: 100%;
+  min-height: auto;
+  margin-bottom: 12px;
+  color: $color-cream;
+  font-family: $font-display;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.featured-shows .show-card__category {
+  margin-bottom: 28px;
+}
+
+.featured-shows .show-card__schedule {
+  margin-top: 0;
 }
 
 /* Scroll buttons */

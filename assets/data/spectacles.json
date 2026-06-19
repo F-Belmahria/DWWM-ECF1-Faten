@@ -82,7 +82,7 @@
       "places_total": 120,
       "places_vendues": 45,
       "artiste": "Ahmed Music Quartet",
-      "image": "assets/images/6.png"
+      "image": "assets/images/Ahmed-Music.png"
     },
     {
       "id": 7,
@@ -96,7 +96,7 @@
       "places_total": 120,
       "places_vendues": 78,
       "artiste": "Nora Music",
-      "image": "assets/images/fca46ccd-8116-418e-b570-6ede6364a097.png"
+      "image": "assets/images/Nora-Music .png"
     },
     {
       "id": 8,
@@ -110,7 +110,7 @@
       "places_total": 120,
       "places_vendues": 98,
       "artiste": "Jamel Comedy Club",
-      "image": "assets/images/fca46ccd-8116-418e-b570-6ede6364a097.png"
+      "image": "assets/images/Jamel-Comedy-Club.png"
     }
   ]
 }

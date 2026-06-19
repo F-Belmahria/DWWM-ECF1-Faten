@@ -6,7 +6,7 @@ const dateFilter = document.getElementById("dateFilter");
 const availabilityFilter = document.getElementById("availabilityFilter");
 const resetFilters = document.getElementById("resetFilters");
 const sortShows = document.getElementById("sortShows");
-const dataVersion = "20260619-show-eight-3";
+const dataVersion = "20260619-show-images-1";
 
 let allSpectacles = [];
 
