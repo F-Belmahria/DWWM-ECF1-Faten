@@ -21,7 +21,10 @@
     z-index: -1;
     background: url("../assets/images/rideaux.webp") center top / cover
       no-repeat;
+    opacity: 1;
+    mix-blend-mode: normal;
     pointer-events: none;
+    display: none;
   }
 
   &::after {
@@ -29,20 +32,11 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background:
-      linear-gradient(
-        90deg,
-        transparent 0%,
-        transparent 48%,
-        rgba($color-bordeaux, 0.38) 62%,
-        rgba($color-bordeaux, 0.68) 82%,
-        rgba($color-anthracite, 0.5) 100%
-      ),
-      linear-gradient(
-        180deg,
-        rgba($color-anthracite, 0.08) 0%,
-        rgba($color-anthracite, 0.34) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(42, 45, 52, 0.08) 0%,
+      rgba(42, 45, 52, 0.34) 100%
+    );
     pointer-events: none;
   }
 }
@@ -646,13 +640,13 @@
       margin-inline: auto;
     }
 
-    &__input {
+    .newsletter__input {
       padding: 0 14px;
-      font-size: 11px;
+      font-size: 12px;
     }
 
-    &__button {
-      font-size: 11px;
+    .newsletter__button {
+      font-size: 12px;
     }
   }
 }
@@ -745,4 +739,113 @@
   .shows-nav--next {
     right: 8px;
   }
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Open curtain panels remain visible on the sides after the animation. */
+.curtain-open {
+  --curtain-side-width: clamp(120px, 13vw, 220px);
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(50% + 2px);
+  z-index: 4;
+  background-color: transparent;
+  background-repeat: no-repeat, repeat-x;
+  background-size: var(--curtain-side-width) 100%, auto 100%;
+  background-position: center;
+  pointer-events: none;
+  transform: translateX(0);
+  transition: transform 2.8s cubic-bezier(0.77, 0, 0.18, 1);
+  transition-delay: 0.35s;
+}
+
+.curtain-open--left {
+  left: 0;
+  background-image:
+    url("../assets/images/curtain-left-open.png"),
+    url("../assets/images/curtain-left-closed.png");
+  background-position:
+    right center,
+    left center;
+}
+
+.curtain-open--right {
+  right: 0;
+  background-image:
+    url("../assets/images/curtain-right-open.png"),
+    url("../assets/images/curtain-right-closed.png");
+  background-position:
+    left center,
+    right center;
+}
+
+/* Closed curtain panels cover the full hero before fading out. */
+.curtain-closed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(50% + 2px);
+  z-index: 5;
+  background-color: transparent;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+  pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.6s ease,
+    visibility 0s linear 0.6s;
+}
+
+.curtain-closed--left {
+  left: 0;
+  background-image: url("../assets/images/curtain-left-closed.png");
+  background-position: right center;
+}
+
+.curtain-closed--right {
+  right: 0;
+  background-image: url("../assets/images/curtain-right-closed.png");
+  background-position: left center;
+}
+
+/* The closed layer disappears while the open curtains slide to the sides. */
+.hero.is-open .curtain-closed {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hero.is-open .curtain-open--left {
+  transform: translateX(calc(-100% + var(--curtain-side-width)));
+}
+
+.hero.is-open .curtain-open--right {
+  transform: translateX(calc(100% - var(--curtain-side-width)));
+}
+
+/* Keep the hero content above the curtain layers. */
+.hero-inner {
+  position: relative;
+  z-index: 6;
+}
+
+/* Fade in the hero text after the curtain movement starts. */
+.hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  transition-delay: 1.6s;
+}
+
+.hero.is-open .hero-content {
+  opacity: 1;
+  transform: translateY(0);
 }

@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -70,6 +69,18 @@ body {
   align-items: center;
   max-width: 1188px;
   padding-inline: 46px;
+}
+
+.home-page .site-header {
+  opacity: 0;
+  transform: translateY(-14px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 1.6s;
+}
+
+.home-page.curtain-is-open .site-header {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .site-logo {
@@ -189,7 +200,7 @@ body {
   filter: brightness(0) invert(1);
 }
 
-/* Tablette et mobile */
+/* Tablet and mobile */
 @media (max-width: 991.98px) {
   .site-header {
     min-height: 86px;
@@ -954,15 +965,17 @@ body {
   inset: 0;
   z-index: -1;
   background: url("../assets/images/rideaux.webp") center top/cover no-repeat;
-  mix-blend-mode: screen;
+  opacity: 1;
+  mix-blend-mode: normal;
   pointer-events: none;
+  display: none;
 }
 .hero::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, transparent 0%, transparent 54%, rgba(107, 29, 58, 0.22) 68%, rgba(107, 29, 58, 0.46) 86%, rgba(42, 45, 52, 0.32) 100%), linear-gradient(180deg, rgba(42, 45, 52, 0.08) 0%, rgba(42, 45, 52, 0.34) 100%);
+  background: linear-gradient(180deg, rgba(42, 45, 52, 0.08) 0%, rgba(42, 45, 52, 0.34) 100%);
   pointer-events: none;
 }
 
@@ -1475,12 +1488,12 @@ body {
     margin-left: 0;
     margin-inline: auto;
   }
-  .newsletter__input {
+  .newsletter .newsletter__input {
     padding: 0 14px;
-    font-size: 11px;
+    font-size: 12px;
   }
-  .newsletter__button {
-    font-size: 11px;
+  .newsletter .newsletter__button {
+    font-size: 12px;
   }
 }
 /* Featured shows horizontal carousel */
@@ -1567,6 +1580,103 @@ body {
     right: 8px;
   }
 }
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Open curtain panels remain visible on the sides after the animation. */
+.curtain-open {
+  --curtain-side-width: clamp(120px, 13vw, 220px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(50% + 2px);
+  z-index: 4;
+  background-color: transparent;
+  background-repeat: no-repeat, repeat-x;
+  background-size: var(--curtain-side-width) 100%, auto 100%;
+  background-position: center;
+  pointer-events: none;
+  transform: translateX(0);
+  transition: transform 2.8s cubic-bezier(0.77, 0, 0.18, 1);
+  transition-delay: 0.35s;
+}
+
+.curtain-open--left {
+  left: 0;
+  background-image: url("../assets/images/curtain-left-open.png"), url("../assets/images/curtain-left-closed.png");
+  background-position: right center, left center;
+}
+
+.curtain-open--right {
+  right: 0;
+  background-image: url("../assets/images/curtain-right-open.png"), url("../assets/images/curtain-right-closed.png");
+  background-position: left center, right center;
+}
+
+/* Closed curtain panels cover the full hero before fading out. */
+.curtain-closed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(50% + 2px);
+  z-index: 5;
+  background-color: transparent;
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+  pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+}
+
+.curtain-closed--left {
+  left: 0;
+  background-image: url("../assets/images/curtain-left-closed.png");
+  background-position: right center;
+}
+
+.curtain-closed--right {
+  right: 0;
+  background-image: url("../assets/images/curtain-right-closed.png");
+  background-position: left center;
+}
+
+/* The closed layer disappears while the open curtains slide to the sides. */
+.hero.is-open .curtain-closed {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hero.is-open .curtain-open--left {
+  transform: translateX(calc(-100% + var(--curtain-side-width)));
+}
+
+.hero.is-open .curtain-open--right {
+  transform: translateX(calc(100% - var(--curtain-side-width)));
+}
+
+/* Keep the hero content above the curtain layers. */
+.hero-inner {
+  position: relative;
+  z-index: 6;
+}
+
+/* Fade in the hero text after the curtain movement starts. */
+.hero-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  transition-delay: 1.6s;
+}
+
+.hero.is-open .hero-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .programming-page {
   background-color: #f5f0e8;
 }
@@ -1942,14 +2052,14 @@ h1 {
   color: #6b1d3a;
 }
 
-/* Conteneur des cartes */
+/* Cards container */
 .shows-cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
   gap: 30px 28px;
 }
 
-/* Card */
+/* Show card */
 .show-card {
   width: 100%;
   height: auto;
@@ -1961,17 +2071,17 @@ h1 {
   box-shadow: 0 4px 10px rgba(42, 45, 52, 0.08);
 }
 
-/* Bonus : or si disponible */
+/* Bonus: gold border for available shows */
 .card-available {
   border-color: #d4a843;
 }
 
-/* Bonus : bordeaux si complet */
+/* Bonus: burgundy border for sold-out shows */
 .card-sold-out {
   border-color: #6b1d3a;
 }
 
-/* Header de la card */
+/* Card header */
 .show-card-header {
   position: relative;
   height: 230px;
@@ -1985,7 +2095,7 @@ h1 {
   object-position: center;
 }
 
-/* Quand il n'y a pas d'image */
+/* Image fallback */
 .image-placeholder {
   width: 100%;
   height: 100%;
@@ -1998,7 +2108,7 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* Badge date */
+/* Date badge */
 .date-badge {
   position: absolute;
   top: 10px;
@@ -2022,7 +2132,7 @@ h1 {
   font-size: 10px;
 }
 
-/* Icône favori */
+/* Favorite icon */
 .favorite-icon {
   position: absolute;
   top: 10px;
@@ -2037,7 +2147,7 @@ h1 {
   font-size: 15px;
 }
 
-/* Contenu */
+/* Content */
 .show-card-body {
   min-height: 285px;
   padding: 18px;
@@ -2082,7 +2192,7 @@ h1 {
   margin-bottom: 8px;
 }
 
-/* Statut */
+/* Status */
 .status {
   font-size: 12px;
   margin: 8px 0 6px;
@@ -2132,7 +2242,7 @@ h1 {
   margin-top: 6px;
 }
 
-/* Responsive tablette */
+/* Tablet responsive layout */
 @media screen and (max-width: 1200px) {
   .shows-cards {
     grid-template-columns: repeat(3, minmax(260px, 1fr));
@@ -2143,7 +2253,7 @@ h1 {
     grid-template-columns: repeat(2, minmax(260px, 1fr));
   }
 }
-/* Responsive mobile */
+/* Mobile responsive layout */
 @media screen and (max-width: 767.98px) {
   .shows-cards {
     grid-template-columns: 1fr;
@@ -2250,33 +2360,6 @@ h1 {
   font-weight: 500;
 }
 
-/* Final overlap adjustment: keeps the rounded practical-info panel higher on the hero. */
-.practical-info {
-  margin-top: -115px;
-}
-.practical-info__container {
-  position: relative;
-  width: min(100% - 48px, 1180px);
-  margin-inline: auto;
-  border-radius: 16px 16px 0 0;
-}
-
-@media (max-width: 991.98px) {
-  .practical-info {
-    margin-top: -88px;
-  }
-  .practical-info__container {
-    width: min(100% - 32px, 760px);
-  }
-}
-@media (max-width: 575.98px) {
-  .practical-info {
-    margin-top: -56px;
-  }
-  .practical-info__container {
-    width: calc(100% - 24px);
-  }
-}
 @media (max-width: 991.98px) {
   .Infos-Pratiques-hero {
     min-height: 330px;
@@ -2726,60 +2809,21 @@ h1 {
     font-size: 20px;
   }
 }
-/* Final page override: this must stay at the bottom of the file. */
+/* Final practical panel reset: restores the original rounded card style. */
 .practical-info {
-  margin-top: -115px;
+  position: relative;
+  z-index: 5;
+  margin-top: -55px;
+  padding-bottom: 70px;
+  background-color: #f5f0e8;
 }
 .practical-info__container {
-  position: relative;
-  width: min(100% - 48px, 1180px);
-  margin-inline: auto;
+  padding: 34px 32px 44px;
+  background-color: #f5f0e8;
   border-radius: 16px 16px 0 0;
+  box-shadow: 0 12px 30px rgba(42, 45, 52, 0.12);
 }
 
-@media (max-width: 991.98px) {
-  .practical-info {
-    margin-top: -88px;
-  }
-  .practical-info__container {
-    width: min(100% - 32px, 760px);
-  }
-}
-@media (max-width: 575.98px) {
-  .practical-info {
-    margin-top: -56px;
-  }
-  .practical-info__container {
-    width: calc(100% - 24px);
-  }
-}
-/* Final overlap adjustment: keeps the rounded practical-info panel higher on the hero. */
-.practical-info {
-  margin-top: -115px;
-}
-.practical-info__container {
-  position: relative;
-  width: min(100% - 48px, 1180px);
-  margin-inline: auto;
-  border-radius: 16px 16px 0 0;
-}
-
-@media (max-width: 991.98px) {
-  .practical-info {
-    margin-top: -88px;
-  }
-  .practical-info__container {
-    width: min(100% - 32px, 760px);
-  }
-}
-@media (max-width: 575.98px) {
-  .practical-info {
-    margin-top: -56px;
-  }
-  .practical-info__container {
-    width: calc(100% - 24px);
-  }
-}
 /* Practical info page */
 .practical-info {
   position: relative;
@@ -3197,4 +3241,18 @@ h1 {
   .seat-map__subtitle {
     font-size: 20px;
   }
+}
+/* Final practical panel reset: restores the original rounded card style. */
+.practical-info {
+  position: relative;
+  z-index: 5;
+  margin-top: -55px;
+  padding-bottom: 70px;
+  background-color: #f5f0e8;
+}
+.practical-info__container {
+  padding: 34px 32px 44px;
+  background-color: #f5f0e8;
+  border-radius: 16px 16px 0 0;
+  box-shadow: 0 12px 30px rgba(42, 45, 52, 0.12);
 }

@@ -30,6 +30,20 @@
   }
 }
 
+.home-page .site-header {
+  opacity: 0;
+  transform: translateY(-14px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+  transition-delay: 1.6s;
+}
+
+.home-page.curtain-is-open .site-header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .site-logo {
   display: inline-flex;
   align-items: center;
@@ -176,7 +190,7 @@
   filter: brightness(0) invert(1);
 }
 
-/* Tablette et mobile */
+/* Tablet and mobile */
 @media (max-width: $breakpoint-tablet) {
   .site-header {
     min-height: $header-height-mobile;

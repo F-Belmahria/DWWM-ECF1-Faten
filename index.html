@@ -24,13 +24,27 @@
       sizes="96x96"
       href="assets/images/logo.png"
     />
-    <link rel="stylesheet" href="css/style.css?v=20260619-curtain-right-2" />
+    <link rel="stylesheet" href="css/style.css?v=20260619-curtain-19" />
   </head>
-  <body>
+  <body class="home-page">
     <div id="header"></div>
 
     <main>
       <section class="hero" aria-labelledby="hero-title">
+        <!-- Open curtains stay visible on the sides after the animation -->
+        <div class="curtain-open curtain-open--left" aria-hidden="true"></div>
+        <div class="curtain-open curtain-open--right" aria-hidden="true"></div>
+
+        <!-- Closed curtains cover the hero before the opening animation -->
+        <div
+          class="curtain-closed curtain-closed--left"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="curtain-closed curtain-closed--right"
+          aria-hidden="true"
+        ></div>
+
         <div class="hero-inner container">
           <div class="hero-content">
             <p class="hero-eyebrow">Bienvenue au</p>
@@ -76,11 +90,11 @@
               <article class="show-card">
                 <div class="show-card__media">
                   <img
-                    src="assets/images/ChatGPT Image Jun 15, 2026, 10_48_46 PM (1).png"
+                    src="assets/images/cyrano-featured.png"
                     class="show-card__image"
                     alt="Cyrano de Bergerac"
-                  />
-                  <div class="show-card__badge" aria-label="22 juin">
+                  >
+                  <div class="show-card__badge">
                     <span>22</span>
                     <small>Juin</small>
                   </div>
@@ -102,8 +116,8 @@
                     src="assets/images/fca46ccd-8116-418e-b570-6ede6364a097.png"
                     class="show-card__image"
                     alt="Marina Music"
-                  />
-                  <div class="show-card__badge" aria-label="24 juin">
+                  >
+                  <div class="show-card__badge">
                     <span>24</span>
                     <small>Juin</small>
                   </div>
@@ -125,8 +139,8 @@
                     src="assets/images/6a746338-24c8-4493-873c-a47e31bc7322.png"
                     class="show-card__image"
                     alt="Paul Music"
-                  />
-                  <div class="show-card__badge" aria-label="25 juin">
+                  >
+                  <div class="show-card__badge">
                     <span>25</span>
                     <small>Juin</small>
                   </div>
@@ -146,16 +160,16 @@
                   <img
                     src="assets/images/4.png"
                     class="show-card__image"
-                    alt="Paul Music"
-                  />
-                  <div class="show-card__badge" aria-label="25 juin">
+                    alt="En attendant Godot"
+                  >
+                  <div class="show-card__badge">
                     <span>22</span>
                     <small>Juin</small>
                   </div>
                 </div>
 
                 <div class="card-body">
-                  <h3 class="show-card__title">EN ATTENDA GODOT</h3>
+                  <h3 class="show-card__title">EN ATTENDANT GODOT</h3>
                   <p class="show-card__category">THÉÂTRE</p>
                   <div class="show-card__schedule">
                     <i class="bi bi-calendar" aria-hidden="true"></i>
@@ -168,9 +182,9 @@
                   <img
                     src="assets/images/5.png"
                     class="show-card__image"
-                    alt="Paul Music"
-                  />
-                  <div class="show-card__badge" aria-label="25 juin">
+                    alt="Fadily Camara"
+                  >
+                  <div class="show-card__badge">
                     <span>30</span>
                     <small>Juin</small>
                   </div>
@@ -190,9 +204,9 @@
                   <img
                     src="assets/images/6.png"
                     class="show-card__image"
-                    alt="Paul Music"
-                  />
-                  <div class="show-card__badge" aria-label="25 juin">
+                    alt="Ahmed Music"
+                  >
+                  <div class="show-card__badge">
                     <span>30</span>
                     <small>Juin</small>
                   </div>
@@ -220,7 +234,7 @@
           </div>
         </div>
 
-        <div
+        <nav
           class="featured-shows__pagination shows-pagination d-flex justify-content-center align-items-center"
           aria-label="Navigation des spectacles"
         >
@@ -242,18 +256,18 @@
             type="button"
             aria-label="Troisième page"
           ></button>
-        </div>
+        </nav>
       </section>
 
       <section class="about">
         <div class="container-fluid px-0 about__container">
           <div class="row g-0 about__wrapper">
             <div class="col-12 col-lg-6 about__media">
-              <img
-                src="assets/images/7.png"
-                alt="Salle de spectacle Le Phosphore"
-                class="about__image"
-              />
+            <img
+              src="assets/images/7.png"
+              alt="Salle de spectacle Le Phosphore"
+              class="about__image"
+            >
             </div>
 
             <div class="col-12 col-lg-6">
@@ -372,6 +386,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/includes.js?v=20260618-footer-text"></script>
-    <script src="js/main.js?v=20260619-desktop-scroll-1"></script>
+    <script src="js/main.js?v=20260619-curtain-19"></script>
   </body>
 </html>

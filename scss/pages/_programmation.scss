@@ -429,14 +429,14 @@ h1 {
   color: $color-bordeaux;
 }
 
-/* Conteneur des cartes */
+/* Cards container */
 .shows-cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
   gap: 30px 28px;
 }
 
-/* Card */
+/* Show card */
 .show-card {
   width: 100%;
   height: auto;
@@ -448,17 +448,17 @@ h1 {
   box-shadow: 0 4px 10px rgba($color-anthracite, 0.08);
 }
 
-/* Bonus : or si disponible */
+/* Bonus: gold border for available shows */
 .card-available {
   border-color: $color-gold;
 }
 
-/* Bonus : bordeaux si complet */
+/* Bonus: burgundy border for sold-out shows */
 .card-sold-out {
   border-color: $color-bordeaux;
 }
 
-/* Header de la card */
+/* Card header */
 .show-card-header {
   position: relative;
   height: 230px;
@@ -472,7 +472,7 @@ h1 {
   object-position: center;
 }
 
-/* Quand il n'y a pas d'image */
+/* Image fallback */
 .image-placeholder {
   width: 100%;
   height: 100%;
@@ -485,7 +485,7 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* Badge date */
+/* Date badge */
 .date-badge {
   position: absolute;
   top: 10px;
@@ -509,7 +509,7 @@ h1 {
   font-size: 10px;
 }
 
-/* Icône favori */
+/* Favorite icon */
 .favorite-icon {
   position: absolute;
   top: 10px;
@@ -524,7 +524,7 @@ h1 {
   font-size: 15px;
 }
 
-/* Contenu */
+/* Content */
 .show-card-body {
   min-height: 285px;
   padding: 18px;
@@ -569,7 +569,7 @@ h1 {
   margin-bottom: 8px;
 }
 
-/* Statut */
+/* Status */
 .status {
   font-size: 12px;
   margin: 8px 0 6px;
@@ -619,7 +619,7 @@ h1 {
   margin-top: 6px;
 }
 
-/* Responsive tablette */
+/* Tablet responsive layout */
 @media screen and (max-width: 1200px) {
   .shows-cards {
     grid-template-columns: repeat(3, minmax(260px, 1fr));
@@ -632,7 +632,7 @@ h1 {
   }
 }
 
-/* Responsive mobile */
+/* Mobile responsive layout */
 @media screen and (max-width: 767.98px) {
   .shows-cards {
     grid-template-columns: 1fr;

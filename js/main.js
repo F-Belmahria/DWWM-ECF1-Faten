@@ -10,7 +10,7 @@ if (featuredCarousel && showsGrid && showsPrev && showsNext) {
   // Store the cards once so the carousel can reuse the same elements.
   const showCards = Array.from(showsGrid.querySelectorAll(".show-card"));
   const paginationButtons = Array.from(
-    featuredCarousel.querySelectorAll(".shows-pagination__button")
+    featuredCarousel.querySelectorAll(".shows-pagination__button"),
   );
 
   function updateFeaturedCarousel() {
@@ -98,3 +98,14 @@ if (featuredCarousel && showsGrid && showsPrev && showsNext) {
   // Initialize the carousel once the listeners are ready.
   updateFeaturedCarousel();
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const hero = document.querySelector(".hero");
+
+  if (!hero) return;
+
+  setTimeout(function () {
+    // One class starts the curtain movement, the other reveals the header in sync.
+    hero.classList.add("is-open");
+    document.body.classList.add("curtain-is-open");
+  }, 300);
+});

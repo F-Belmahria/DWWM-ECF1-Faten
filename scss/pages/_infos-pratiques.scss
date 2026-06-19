@@ -61,38 +61,6 @@
   }
 }
 
-/* Final overlap adjustment: keeps the rounded practical-info panel higher on the hero. */
-.practical-info {
-  margin-top: -115px;
-
-  &__container {
-    position: relative;
-    width: min(100% - 48px, 1180px);
-    margin-inline: auto;
-    border-radius: 16px 16px 0 0;
-  }
-}
-
-@media (max-width: $breakpoint-tablet) {
-  .practical-info {
-    margin-top: -88px;
-
-    &__container {
-      width: min(100% - 32px, 760px);
-    }
-  }
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .practical-info {
-    margin-top: -56px;
-
-    &__container {
-      width: calc(100% - 24px);
-    }
-  }
-}
-
 @media (max-width: $breakpoint-tablet) {
   .Infos-Pratiques-hero {
     min-height: 330px;
@@ -636,69 +604,22 @@
   }
 }
 
-/* Final page override: this must stay at the bottom of the file. */
+/* Final practical panel reset: restores the original rounded card style. */
 .practical-info {
-  margin-top: -115px;
+  position: relative;
+  z-index: 5;
+  margin-top: -55px;
+  padding-bottom: 70px;
+  background-color: $color-cream;
 
   &__container {
-    position: relative;
-    width: min(100% - 48px, 1180px);
-    margin-inline: auto;
+    padding: 34px 32px 44px;
+    background-color: $color-cream;
     border-radius: 16px 16px 0 0;
+    box-shadow: 0 12px 30px rgba($color-anthracite, 0.12);
   }
 }
 
-@media (max-width: $breakpoint-tablet) {
-  .practical-info {
-    margin-top: -88px;
-
-    &__container {
-      width: min(100% - 32px, 760px);
-    }
-  }
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .practical-info {
-    margin-top: -56px;
-
-    &__container {
-      width: calc(100% - 24px);
-    }
-  }
-}
-
-/* Final overlap adjustment: keeps the rounded practical-info panel higher on the hero. */
-.practical-info {
-  margin-top: -115px;
-
-  &__container {
-    position: relative;
-    width: min(100% - 48px, 1180px);
-    margin-inline: auto;
-    border-radius: 16px 16px 0 0;
-  }
-}
-
-@media (max-width: $breakpoint-tablet) {
-  .practical-info {
-    margin-top: -88px;
-
-    &__container {
-      width: min(100% - 32px, 760px);
-    }
-  }
-}
-
-@media (max-width: $breakpoint-mobile) {
-  .practical-info {
-    margin-top: -56px;
-
-    &__container {
-      width: calc(100% - 24px);
-    }
-  }
-}
 /* Practical info page */
 
 .practical-info {
@@ -1201,5 +1122,21 @@
     &__subtitle {
       font-size: 20px;
     }
+  }
+}
+
+/* Final practical panel reset: restores the original rounded card style. */
+.practical-info {
+  position: relative;
+  z-index: 5;
+  margin-top: -55px;
+  padding-bottom: 70px;
+  background-color: $color-cream;
+
+  &__container {
+    padding: 34px 32px 44px;
+    background-color: $color-cream;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 12px 30px rgba($color-anthracite, 0.12);
   }
 }
