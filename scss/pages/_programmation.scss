@@ -215,7 +215,7 @@
     height: 100%;
     display: block;
     object-fit: cover;
-    object-position: 50% 30%;
+    object-position: 50% 32%;
   }
 
   &__date {
@@ -433,7 +433,7 @@ h1 {
 .shows-cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(250px, 1fr));
-  gap: 34px 28px;
+  gap: 30px 28px;
 }
 
 /* Card */
@@ -622,7 +622,7 @@ h1 {
 /* Responsive tablette */
 @media screen and (max-width: 1200px) {
   .shows-cards {
-    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    grid-template-columns: repeat(3, minmax(260px, 1fr));
   }
 }
 
@@ -633,9 +633,14 @@ h1 {
 }
 
 /* Responsive mobile */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767.98px) {
   .shows-cards {
     grid-template-columns: 1fr;
+  }
+
+  .show-card {
+    max-width: 430px;
+    margin-inline: auto;
   }
 }
 .shows-pagination {

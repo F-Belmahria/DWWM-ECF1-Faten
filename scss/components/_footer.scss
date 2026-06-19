@@ -33,6 +33,7 @@ $body-font: "Inter", Arial, sans-serif;
 
   &__content {
     align-items: flex-start;
+    row-gap: 2.5rem;
   }
 
   &__brand {
@@ -228,6 +229,7 @@ $body-font: "Inter", Arial, sans-serif;
 
   &__legal-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
@@ -266,6 +268,28 @@ $body-font: "Inter", Arial, sans-serif;
     &__legal-list {
       justify-content: flex-start;
       gap: 1.5rem 3rem;
+    }
+
+    &__social-list {
+      gap: 1.25rem;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .footer {
+    &__mobile-main {
+      padding: 40px 0 54px;
+    }
+
+    &__mobile-name {
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    &__mobile-text {
+      font-size: 15px;
+      line-height: 24px;
     }
   }
 }

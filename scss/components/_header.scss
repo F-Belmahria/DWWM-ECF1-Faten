@@ -25,7 +25,7 @@
     display: flex;
     align-items: center;
 
-    max-width: 1220px;
+    max-width: 1188px;
     padding-inline: 46px;
   }
 }
@@ -71,7 +71,7 @@
 
 .navbar-nav {
   align-items: center;
-  gap: 48px;
+  gap: 42px;
 }
 
 .site-header .navbar-nav .nav-link.active {
@@ -123,7 +123,7 @@
 }
 
 .btn-reservation {
-  min-width: 246px;
+  min-width: 224px;
   min-height: 57px;
 
   display: inline-flex;
@@ -247,5 +247,34 @@
     min-height: 52px;
     margin-top: 20px;
     margin-left: 0;
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .site-header {
+    .container {
+      padding-inline: 28px;
+    }
+  }
+
+  .site-logo {
+    margin-right: 28px;
+
+    img {
+      width: 70px;
+    }
+  }
+
+  .site-logo-text {
+    font-size: 17px;
+  }
+
+  .navbar-nav {
+    gap: 24px;
+  }
+
+  .btn-reservation {
+    min-width: 188px;
+    margin-left: 24px;
   }
 }
